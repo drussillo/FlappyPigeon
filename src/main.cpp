@@ -109,6 +109,18 @@ int main() {
     0.5f, -0.5f, 0.0f, 0.7f, 1.0f, 0.7f, 1.0f  // right
   };
 
+  // float quad[] = {
+  //   -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // top left
+  //   -0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // bottom left
+  //   0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // top right
+  //   0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // bottom right
+  // };
+  //
+  // unsigned int indices[] {
+  //   0, 1, 2,
+  //   2, 1, 3
+  // };
+
   unsigned int VAO;
   glGenVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
