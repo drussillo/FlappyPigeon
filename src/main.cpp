@@ -109,26 +109,32 @@ int main() {
     0.5f, -0.5f, 0.0f, 0.7f, 1.0f, 0.7f, 1.0f  // right
   };
 
-  // float quad[] = {
-  //   -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // top left
-  //   -0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // bottom left
-  //   0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // top right
-  //   0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,  // bottom right
-  // };
-  //
-  // unsigned int indices[] {
-  //   0, 1, 2,
-  //   2, 1, 3
-  // };
+  float quad[] = {
+    -0.5f, 0.5f, 0.0f, 0.7f, 0.7f, 0.5f, 1.0f,  // top left
+    -0.5f, -0.5f, 0.0f, 0.7f, 1.0f, 0.7f, 1.0f,  // bottom left
+    0.5f, 0.5f, 0.0f, 0.7f, 0.7f, 0.5f, 1.0f,  // top right
+    0.5f, -0.5f, 0.0f, 0.7f, 1.0f, 0.7f, 1.0f,  // bottom right
+  };
+
+  unsigned int indices[] {
+    0, 1, 2,
+    2, 1, 3
+  };
 
   unsigned int VAO;
   glGenVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
 
+  unsigned int EBO;
+  glGenBuffers(1, &EBO);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
   unsigned int VBO;
   glGenBuffers(1, &VBO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_DYNAMIC_DRAW);
+  // glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_DYNAMIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(quad), quad, GL_DYNAMIC_DRAW);
 
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
   glEnableVertexAttribArray(0);
@@ -136,7 +142,6 @@ int main() {
   glEnableVertexAttribArray(1);
   glBindVertexArray(0);
 
-  bool up = true;
 
   while (!glfwWindowShouldClose(window)) {
     glClearColor(0.5f, 0.7f, 1.0f, 1.0f);
@@ -145,27 +150,9 @@ int main() {
 
     glUseProgram(shaderProgram);
     glBindVertexArray(VAO);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-
+    // glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     
-    if(triangle[1] >= 0.8f) 
-      up = false;
-    if(triangle[1] <= -0.2f)
-      up = true;
-
-    if(up) {
-      triangle[1] += 0.025f;
-      triangle[7] += 0.01f;
-      triangle[14] -= 0.01f;
-    } else {
-      triangle[1] -= 0.025f;
-      triangle[7] -= 0.01f;
-      triangle[14] += 0.01f;
-    }
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_DYNAMIC_DRAW);
-
     glBindVertexArray(0);
 
     /*****************************************/
