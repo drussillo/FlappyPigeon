@@ -1,6 +1,7 @@
 #ifndef MESH_H
 #define MESH_H
 
+
 #include <vector>
 
 class Mesh {
@@ -27,5 +28,6 @@ private:
   unsigned int EBO = 0;
   unsigned int VBO = 0;
 };
+
 
 #endif

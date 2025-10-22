@@ -1,5 +1,6 @@
-
 #include "mesh.h"
+
+#include <vector>
 
 Mesh::Mesh(const GLenum primitiveType,
            const std::vector<float> &vertices, 
@@ -41,6 +42,7 @@ void Mesh::upload() {
   }
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
+  // TODO
   // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
   // glEnableVertexAttribArray(0);
   // glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3 * sizeof(float)));
