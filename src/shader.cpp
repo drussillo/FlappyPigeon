@@ -74,6 +74,11 @@ void Shader::link() {
   fragmentShaderSource.clear();
 }
 
+void Shader::setMat4(const std::string *variableName, const glm::mat4 &matrix) const {
+  // TODO send matrix to shader
+  // +TODO write shader using uniform mat4
+}
+
 void Shader::use() const {
   glUseProgram(program);
 }

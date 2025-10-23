@@ -53,10 +53,25 @@ int main() {
     std::vector<float>{
       0.0f, 0.5f,
       -0.5f, -0.5f,
-      0.5f, -0.5f},
-    std::vector<unsigned int>{2});
+      0.3f, -0.5f},
+    std::vector<unsigned int>{
+      2});
   triangleMesh->genBuffers();
   triangleMesh->upload();
+
+  std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
+    std::vector<float>{
+      0.1f, 0.5f,
+      0.1f, 0.0f,
+      0.3f, 0.5f,
+      0.3f, 0.0f},
+    std::vector<unsigned int>{
+      2},
+    std::vector<unsigned int>{
+      0, 1, 2,
+      2, 1, 3});
+  quadMesh->genBuffers();
+  quadMesh->upload();
 
   std::shared_ptr<Shader> triangleShader = std::make_shared<Shader>(
     "shaders/basicTriangleShader.vert",
@@ -68,8 +83,12 @@ int main() {
     triangleMesh,
     triangleShader);
 
-  Scene testscene{{
-    t1}, 
+  std::shared_ptr<Element> q1 = std::make_shared<Element>(
+    quadMesh,
+    triangleShader);
+
+  Scene testscene{
+    {q1, t1}, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 
 

@@ -1,6 +1,8 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#include <glm/glm.hpp>
+
 #include <string>
 
 class Shader {
@@ -14,6 +16,7 @@ public:
   void compile();
   void link();
 
+  void setMat4(const std::string *variableName, const glm::mat4 &matrix) const;
   void use() const;
   static void unbind();
 
