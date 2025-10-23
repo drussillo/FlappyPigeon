@@ -28,9 +28,27 @@ Mesh::Mesh(
 }
 
 Mesh::~Mesh() {
+  unbindVAO();
   glDeleteBuffers(1, &VAO);
   glDeleteBuffers(1, &EBO);
   glDeleteBuffers(1, &VBO);
+}
+
+
+GLenum Mesh::getType() const {
+  return primitiveType;
+}
+
+unsigned int Mesh::getVertexCount() const {
+  return vertexCount;
+}
+
+bool Mesh::hasEBO() const {
+  return indices.empty();
+}
+
+unsigned int Mesh::getIndexCount() const {
+  return indices.size();
 }
 
 
@@ -74,7 +92,7 @@ void Mesh::bindVAO() const {
   glBindVertexArray(VAO);
 }
 
-void Mesh::unbindVAO() const {
+void Mesh::unbindVAO() {
   glBindVertexArray(0);
 }
 

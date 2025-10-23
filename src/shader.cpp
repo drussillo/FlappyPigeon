@@ -10,6 +10,12 @@ Shader::Shader(const std::string &vertexPath,
   setFragmentSource(fragmentPath);
 }
 
+Shader::~Shader() {
+  unbind();
+  glDeleteProgram(program);
+}
+
+
 void Shader::setVertexSource(const std::string &vertexPath) {
   std::string line;
   std::string text;
@@ -31,10 +37,9 @@ void Shader::setFragmentSource(const std::string &fragmentPath) {
 }
 
 
-unsigned int compileHelper(const GLenum shaderType, const std::string &source) {
+unsigned int compileHelper(const GLenum shaderType, const char *source) {
   unsigned int shader = glCreateShader(shaderType);
-  const char *sourceC = source.c_str();
-  glShaderSource(shader, 1, &sourceC, nullptr);
+  glShaderSource(shader, 1, &source, nullptr);
   glCompileShader(shader);
   int success;
   char log[512];
@@ -47,8 +52,8 @@ unsigned int compileHelper(const GLenum shaderType, const std::string &source) {
 }
 
 void Shader::compile() {
-  vertexShader = compileHelper(GL_VERTEX_SHADER, vertexShaderSource);
-  fragmentShader = compileHelper(GL_FRAGMENT_SHADER, fragmentShaderSource);
+  vertexShader = compileHelper(GL_VERTEX_SHADER, vertexShaderSource.c_str());
+  fragmentShader = compileHelper(GL_FRAGMENT_SHADER, fragmentShaderSource.c_str());
 }
 
 void Shader::link() {
@@ -68,3 +73,12 @@ void Shader::link() {
   vertexShaderSource.clear();
   fragmentShaderSource.clear();
 }
+
+void Shader::use() const {
+  glUseProgram(program);
+}
+
+void Shader::unbind() {
+  glUseProgram(0);
+}
+

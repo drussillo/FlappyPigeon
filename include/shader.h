@@ -6,6 +6,7 @@
 class Shader {
 public:
   Shader(const std::string &vertexPath="", const std::string &fragmentPath="");
+  ~Shader();
 
   void setVertexSource(const std::string &vertexPath);
   void setFragmentSource(const std::string &fragmentPath);
@@ -13,7 +14,8 @@ public:
   void compile();
   void link();
 
-  void use();
+  void use() const;
+  static void unbind();
 
 private:
   unsigned int program;

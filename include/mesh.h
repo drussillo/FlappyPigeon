@@ -13,17 +13,22 @@ public:
        const GLenum primitiveType=GL_TRIANGLES);
   ~Mesh();
 
+  GLenum getType() const;
+  unsigned int getVertexCount() const;
+  bool hasEBO() const;
+  unsigned int getIndexCount() const;
+
   void genBuffers();  // generates VAO, EBO, and VBO without binding
   void upload();  // binds VAO, sends data to GPU, unbinds VAO
 
   void bindVAO() const;
-  void unbindVAO() const;
+  static void unbindVAO();
 
 private:
-  GLenum primitiveType;
   std::vector<float> vertices;
   std::vector<unsigned int> attributeSizes;
   std::vector<unsigned int> indices;
+  GLenum primitiveType;
   unsigned int vertexCount = 0;
   unsigned int vertexAttributes = 0;
   unsigned int VAO = 0;
