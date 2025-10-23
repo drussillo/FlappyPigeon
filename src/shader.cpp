@@ -1,5 +1,9 @@
 #include "shader.h"
 
+#include <glad/glad.h>
+#include <iostream>
+#include <fstream>
+
 Shader::Shader(const std::string &vertexPath,
                const std::string &fragmentPath) {
   setVertexSource(vertexPath);
@@ -15,9 +19,10 @@ void Shader::setFragmentSource(const std::string &fragmentPath) {
 }
 
 
-unsigned int compileHelper(const GLenum shaderType, const std::string &source) const {
+unsigned int compileHelper(const GLenum shaderType, const std::string &source) {
   unsigned int shader = glCreateShader(shaderType);
-  glShaderSource(shader, 1, &source, nullptr);
+  const char *sourceC = source.c_str();
+  glShaderSource(shader, 1, &sourceC, nullptr);
   glCompileShader(shader);
   int success;
   char log[512];
@@ -25,8 +30,8 @@ unsigned int compileHelper(const GLenum shaderType, const std::string &source) c
   if(!success) {
     glGetShaderInfoLog(shader, 512, nullptr, log);
     std::cerr << "Shader compilation failed.\n" << log << std::endl;
-    exit(1);
   }
+  return shader;
 }
 
 void Shader::compile() {
@@ -39,6 +44,8 @@ void Shader::link() {
   glAttachShader(program, vertexShader);
   glAttachShader(program, fragmentShader);
   glLinkProgram(program);
+  int success;
+  char log[512];
   glGetProgramiv(program, GL_LINK_STATUS, &success);
   if(!success) {
     glGetProgramInfoLog(program, 512, nullptr, log);

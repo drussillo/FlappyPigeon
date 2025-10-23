@@ -1,11 +1,13 @@
 #include "mesh.h"
 
+#include <iostream>
 #include <vector>
 
-Mesh::Mesh(const GLenum primitiveType,
+Mesh::Mesh(
            const std::vector<float> &vertices, 
            const std::vector<unsigned int> &attributeSizes,
-           const std::vector<unsigned int> &indices)
+           const std::vector<unsigned int> &indices,
+           const GLenum primitiveType)
            : primitiveType{primitiveType},
              vertices{vertices},
              attributeSizes{attributeSizes},
@@ -25,6 +27,12 @@ Mesh::Mesh(const GLenum primitiveType,
   vertexCount = vertices.size() / vertexAttributes;
 }
 
+Mesh::~Mesh() {
+  glDeleteBuffers(1, &VAO);
+  glDeleteBuffers(1, &EBO);
+  glDeleteBuffers(1, &VBO);
+}
+
 
 void Mesh::genBuffers() {
   glGenVertexArrays(1, &VAO);
@@ -38,24 +46,35 @@ void Mesh::upload() {
   glBindVertexArray(VAO);
   if(EBO != 0) {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices.data()), indices.data(), GL_STATIC_DRAW);
   }
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
-  // TODO
-  // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
-  // glEnableVertexAttribArray(0);
-  // glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3 * sizeof(float)));
-  // glEnableVertexAttribArray(1);
-  // glBindVertexArray(0);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices.data()), vertices.data(), GL_DYNAMIC_DRAW);
+
+  size_t stride = 0;
+  for(size_t size : attributeSizes) {
+    stride += size;
+  }
+  size_t offset = 0;
+  for(size_t i = 0; i < attributeSizes.size(); i++) {
+    glVertexAttribPointer(i,
+                          attributeSizes[i], 
+                          GL_FLOAT, 
+                          GL_FALSE, 
+                          stride * sizeof(float), 
+                          (void*)(offset * sizeof(float)));
+    glEnableVertexAttribArray(i);
+    offset += attributeSizes[i];
+  }
+  glBindVertexArray(0);
 }
 
 
-void Mesh::bindVAO() {
+void Mesh::bindVAO() const {
   glBindVertexArray(VAO);
 }
 
-void Mesh::unbindVAO() {
+void Mesh::unbindVAO() const {
   glBindVertexArray(0);
 }
 

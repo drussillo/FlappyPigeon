@@ -4,6 +4,10 @@ FlappyPigeon: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/FlappyPigeon.dir/src/glad.c.o \
   CMakeFiles/FlappyPigeon.dir/src/main.cpp.o \
+  CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o \
+  CMakeFiles/FlappyPigeon.dir/src/element.cpp.o \
+  CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o \
+  CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o \
   /usr/lib/libglfw.so.3.4 \
   /usr/lib/libGLX.so \
   /usr/lib/libOpenGL.so \
@@ -54,6 +58,14 @@ FlappyPigeon: \
 CMakeFiles/FlappyPigeon.dir/src/glad.c.o:
 
 CMakeFiles/FlappyPigeon.dir/src/main.cpp.o:
+
+CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o:
+
+CMakeFiles/FlappyPigeon.dir/src/element.cpp.o:
+
+CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o:
+
+CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/lib/libglfw.so.3.4:
 

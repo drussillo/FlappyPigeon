@@ -100,23 +100,87 @@ CMakeFiles/FlappyPigeon.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FlappyPigeon.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dave/code/FlappyPigeon/src/main.cpp -o CMakeFiles/FlappyPigeon.dir/src/main.cpp.s
 
+CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o: CMakeFiles/FlappyPigeon.dir/flags.make
+CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o: /home/dave/code/FlappyPigeon/src/scene.cpp
+CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o: CMakeFiles/FlappyPigeon.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o -MF CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o.d -o CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o -c /home/dave/code/FlappyPigeon/src/scene.cpp
+
+CMakeFiles/FlappyPigeon.dir/src/scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FlappyPigeon.dir/src/scene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dave/code/FlappyPigeon/src/scene.cpp > CMakeFiles/FlappyPigeon.dir/src/scene.cpp.i
+
+CMakeFiles/FlappyPigeon.dir/src/scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FlappyPigeon.dir/src/scene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dave/code/FlappyPigeon/src/scene.cpp -o CMakeFiles/FlappyPigeon.dir/src/scene.cpp.s
+
+CMakeFiles/FlappyPigeon.dir/src/element.cpp.o: CMakeFiles/FlappyPigeon.dir/flags.make
+CMakeFiles/FlappyPigeon.dir/src/element.cpp.o: /home/dave/code/FlappyPigeon/src/element.cpp
+CMakeFiles/FlappyPigeon.dir/src/element.cpp.o: CMakeFiles/FlappyPigeon.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FlappyPigeon.dir/src/element.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FlappyPigeon.dir/src/element.cpp.o -MF CMakeFiles/FlappyPigeon.dir/src/element.cpp.o.d -o CMakeFiles/FlappyPigeon.dir/src/element.cpp.o -c /home/dave/code/FlappyPigeon/src/element.cpp
+
+CMakeFiles/FlappyPigeon.dir/src/element.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FlappyPigeon.dir/src/element.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dave/code/FlappyPigeon/src/element.cpp > CMakeFiles/FlappyPigeon.dir/src/element.cpp.i
+
+CMakeFiles/FlappyPigeon.dir/src/element.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FlappyPigeon.dir/src/element.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dave/code/FlappyPigeon/src/element.cpp -o CMakeFiles/FlappyPigeon.dir/src/element.cpp.s
+
+CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o: CMakeFiles/FlappyPigeon.dir/flags.make
+CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o: /home/dave/code/FlappyPigeon/src/mesh.cpp
+CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o: CMakeFiles/FlappyPigeon.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o -MF CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o.d -o CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o -c /home/dave/code/FlappyPigeon/src/mesh.cpp
+
+CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dave/code/FlappyPigeon/src/mesh.cpp > CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.i
+
+CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dave/code/FlappyPigeon/src/mesh.cpp -o CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.s
+
+CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o: CMakeFiles/FlappyPigeon.dir/flags.make
+CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o: /home/dave/code/FlappyPigeon/src/shader.cpp
+CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o: CMakeFiles/FlappyPigeon.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o -MF CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o.d -o CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o -c /home/dave/code/FlappyPigeon/src/shader.cpp
+
+CMakeFiles/FlappyPigeon.dir/src/shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FlappyPigeon.dir/src/shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dave/code/FlappyPigeon/src/shader.cpp > CMakeFiles/FlappyPigeon.dir/src/shader.cpp.i
+
+CMakeFiles/FlappyPigeon.dir/src/shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FlappyPigeon.dir/src/shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dave/code/FlappyPigeon/src/shader.cpp -o CMakeFiles/FlappyPigeon.dir/src/shader.cpp.s
+
 # Object files for target FlappyPigeon
 FlappyPigeon_OBJECTS = \
 "CMakeFiles/FlappyPigeon.dir/src/glad.c.o" \
-"CMakeFiles/FlappyPigeon.dir/src/main.cpp.o"
+"CMakeFiles/FlappyPigeon.dir/src/main.cpp.o" \
+"CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o" \
+"CMakeFiles/FlappyPigeon.dir/src/element.cpp.o" \
+"CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o" \
+"CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o"
 
 # External object files for target FlappyPigeon
 FlappyPigeon_EXTERNAL_OBJECTS =
 
 FlappyPigeon: CMakeFiles/FlappyPigeon.dir/src/glad.c.o
 FlappyPigeon: CMakeFiles/FlappyPigeon.dir/src/main.cpp.o
+FlappyPigeon: CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o
+FlappyPigeon: CMakeFiles/FlappyPigeon.dir/src/element.cpp.o
+FlappyPigeon: CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o
+FlappyPigeon: CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o
 FlappyPigeon: CMakeFiles/FlappyPigeon.dir/build.make
 FlappyPigeon: CMakeFiles/FlappyPigeon.dir/compiler_depend.ts
 FlappyPigeon: /usr/lib/libglfw.so.3.4
 FlappyPigeon: /usr/lib/libGLX.so
 FlappyPigeon: /usr/lib/libOpenGL.so
 FlappyPigeon: CMakeFiles/FlappyPigeon.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable FlappyPigeon"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable FlappyPigeon"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FlappyPigeon.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -11,6 +11,6 @@ Element::Element(std::shared_ptr<Mesh> mesh,
                    shader{shader} {}
 
 void Element::update() {
-  position += velocity // * deltaTime
+  position += velocity; // * deltaTime
 }
 

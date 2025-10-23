@@ -9,7 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dave/code/FlappyPigeon/src/glad.c" "CMakeFiles/FlappyPigeon.dir/src/glad.c.o" "gcc" "CMakeFiles/FlappyPigeon.dir/src/glad.c.o.d"
+  "/home/dave/code/FlappyPigeon/src/element.cpp" "CMakeFiles/FlappyPigeon.dir/src/element.cpp.o" "gcc" "CMakeFiles/FlappyPigeon.dir/src/element.cpp.o.d"
   "/home/dave/code/FlappyPigeon/src/main.cpp" "CMakeFiles/FlappyPigeon.dir/src/main.cpp.o" "gcc" "CMakeFiles/FlappyPigeon.dir/src/main.cpp.o.d"
+  "/home/dave/code/FlappyPigeon/src/mesh.cpp" "CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o" "gcc" "CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o.d"
+  "/home/dave/code/FlappyPigeon/src/scene.cpp" "CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o" "gcc" "CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o.d"
+  "/home/dave/code/FlappyPigeon/src/shader.cpp" "CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o" "gcc" "CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o.d"
   "" "FlappyPigeon" "gcc" "CMakeFiles/FlappyPigeon.dir/link.d"
   )
 

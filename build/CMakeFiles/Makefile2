@@ -85,12 +85,12 @@ clean: CMakeFiles/FlappyPigeon.dir/clean
 CMakeFiles/FlappyPigeon.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=1,2,3 "Built target FlappyPigeon"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target FlappyPigeon"
 .PHONY : CMakeFiles/FlappyPigeon.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FlappyPigeon.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dave/code/FlappyPigeon/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dave/code/FlappyPigeon/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/FlappyPigeon.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dave/code/FlappyPigeon/build/CMakeFiles 0
 .PHONY : CMakeFiles/FlappyPigeon.dir/rule
@@ -102,7 +102,7 @@ FlappyPigeon: CMakeFiles/FlappyPigeon.dir/rule
 # codegen rule for target.
 CMakeFiles/FlappyPigeon.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target FlappyPigeon"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dave/code/FlappyPigeon/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target FlappyPigeon"
 .PHONY : CMakeFiles/FlappyPigeon.dir/codegen
 
 # clean rule for target.

@@ -2,14 +2,16 @@
 #define MESH_H
 
 
+#include <glad/glad.h>
 #include <vector>
 
 class Mesh {
 public:
-  Mesh(const GLenum primitiveType=GL_TRIANGLES,
-       const std::vector<float> &vertices, 
+  Mesh(const std::vector<float> &vertices,
        const std::vector<unsigned int> &attributeSizes,
-       const std::vector<unsigned int> &indices={});
+       const std::vector<unsigned int> &indices={},
+       const GLenum primitiveType=GL_TRIANGLES);
+  ~Mesh();
 
   void genBuffers();  // generates VAO, EBO, and VBO without binding
   void upload();  // binds VAO, sends data to GPU, unbinds VAO

@@ -136,6 +136,30 @@ FlappyPigeon/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/build
 .PHONY : FlappyPigeon/fast
 
+src/element.o: src/element.cpp.o
+.PHONY : src/element.o
+
+# target to build an object file
+src/element.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/element.cpp.o
+.PHONY : src/element.cpp.o
+
+src/element.i: src/element.cpp.i
+.PHONY : src/element.i
+
+# target to preprocess a source file
+src/element.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/element.cpp.i
+.PHONY : src/element.cpp.i
+
+src/element.s: src/element.cpp.s
+.PHONY : src/element.s
+
+# target to generate assembly for a file
+src/element.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/element.cpp.s
+.PHONY : src/element.cpp.s
+
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
@@ -184,6 +208,78 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/mesh.o: src/mesh.cpp.o
+.PHONY : src/mesh.o
+
+# target to build an object file
+src/mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o
+.PHONY : src/mesh.cpp.o
+
+src/mesh.i: src/mesh.cpp.i
+.PHONY : src/mesh.i
+
+# target to preprocess a source file
+src/mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.i
+.PHONY : src/mesh.cpp.i
+
+src/mesh.s: src/mesh.cpp.s
+.PHONY : src/mesh.s
+
+# target to generate assembly for a file
+src/mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.s
+.PHONY : src/mesh.cpp.s
+
+src/scene.o: src/scene.cpp.o
+.PHONY : src/scene.o
+
+# target to build an object file
+src/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o
+.PHONY : src/scene.cpp.o
+
+src/scene.i: src/scene.cpp.i
+.PHONY : src/scene.i
+
+# target to preprocess a source file
+src/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/scene.cpp.i
+.PHONY : src/scene.cpp.i
+
+src/scene.s: src/scene.cpp.s
+.PHONY : src/scene.s
+
+# target to generate assembly for a file
+src/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/scene.cpp.s
+.PHONY : src/scene.cpp.s
+
+src/shader.o: src/shader.cpp.o
+.PHONY : src/shader.o
+
+# target to build an object file
+src/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o
+.PHONY : src/shader.cpp.o
+
+src/shader.i: src/shader.cpp.i
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FlappyPigeon.dir/build.make CMakeFiles/FlappyPigeon.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -194,12 +290,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... FlappyPigeon"
+	@echo "... src/element.o"
+	@echo "... src/element.i"
+	@echo "... src/element.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mesh.o"
+	@echo "... src/mesh.i"
+	@echo "... src/mesh.s"
+	@echo "... src/scene.o"
+	@echo "... src/scene.i"
+	@echo "... src/scene.s"
+	@echo "... src/shader.o"
+	@echo "... src/shader.i"
+	@echo "... src/shader.s"
 .PHONY : help
 
 

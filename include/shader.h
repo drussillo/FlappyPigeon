@@ -1,6 +1,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#include <string>
 
 class Shader {
 public:
@@ -11,6 +12,7 @@ public:
 
   void compile();
   void link();
+
   void use();
 
 private:
