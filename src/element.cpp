@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 #include <vector>
+
 #include "mesh.h"
 #include "shader.h"
 
@@ -11,7 +12,8 @@ Element::Element(std::shared_ptr<Mesh> mesh,
                  : mesh{mesh},
                    shader{shader} {}
 
-void Element::draw() {
+
+void Element::draw() const {
   shader->use();
   mesh->bindVAO();
   if(mesh->hasEBO()) {

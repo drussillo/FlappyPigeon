@@ -13,7 +13,7 @@ public:
   Element(std::shared_ptr<Mesh> mesh,
           std::shared_ptr<Shader> shader);
 
-  void draw();
+  void draw() const;
   void update();
 
 private:

@@ -1,12 +1,14 @@
+#include <glm/glm.hpp>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
 #include <memory>
 
-#include "element.h"
 #include "mesh.h"
 #include "shader.h"
+#include "element.h"
+#include "scene.h"
 
 
 int main() {
@@ -62,7 +64,14 @@ int main() {
   triangleShader->compile();
   triangleShader->link();
 
-  Element t1{triangleMesh, triangleShader};
+  std::shared_ptr<Element> t1 = std::make_shared<Element>(
+    triangleMesh,
+    triangleShader);
+
+  Scene testscene{{
+    t1}, 
+    glm::vec4(0.6, 0.8, 1.0, 1.0)};
+
 
   /*****************************************************************/
 
@@ -70,10 +79,9 @@ int main() {
   /*****************************************************************/
   // main loop
   while (!glfwWindowShouldClose(window)) {
-    glClearColor(0.5f, 0.7f, 1.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
     /*****************************************/
 
+    testscene.render();
 
     /*****************************************/
     glfwSwapBuffers(window);

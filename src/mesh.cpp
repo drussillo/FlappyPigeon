@@ -44,7 +44,7 @@ unsigned int Mesh::getVertexCount() const {
 }
 
 bool Mesh::hasEBO() const {
-  return indices.empty();
+  return !indices.empty();
 }
 
 unsigned int Mesh::getIndexCount() const {
@@ -64,10 +64,10 @@ void Mesh::upload() {
   glBindVertexArray(VAO);
   if(EBO != 0) {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices.data()), indices.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
   }
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices.data()), vertices.data(), GL_DYNAMIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_DYNAMIC_DRAW);
 
   size_t stride = 0;
   for(size_t size : attributeSizes) {
