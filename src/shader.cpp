@@ -11,11 +11,23 @@ Shader::Shader(const std::string &vertexPath,
 }
 
 void Shader::setVertexSource(const std::string &vertexPath) {
-  // TODO: load from file
+  std::string line;
+  std::string text;
+  std::ifstream file(vertexPath);
+  while(std::getline(file, line)) {
+    text += line + '\n';
+  }
+  vertexShaderSource = text;
 }
 
 void Shader::setFragmentSource(const std::string &fragmentPath) {
-  // TODO: load from file
+  std::string line;
+  std::string text;
+  std::ifstream file(fragmentPath);
+  while(std::getline(file, line)) {
+    text += line + '\n';
+  }
+  fragmentShaderSource = text;
 }
 
 

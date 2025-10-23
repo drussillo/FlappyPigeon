@@ -47,25 +47,22 @@ int main() {
 
   /*****************************************************************/
   // create elements
-  // std::shared_ptr<Mesh> triangleMesh = std::make_shared<Mesh>(
-  //   std::vector<float>{
-  //     0.0f, 0.5f,
-  //     -0.5f, -0.5f,
-  //     0.5f, -0.5f},
-  //   std::vector<unsigned int>{2});
+  std::shared_ptr<Mesh> triangleMesh = std::make_shared<Mesh>(
+    std::vector<float>{
+      0.0f, 0.5f,
+      -0.5f, -0.5f,
+      0.5f, -0.5f},
+    std::vector<unsigned int>{2});
+  triangleMesh->genBuffers();
+  triangleMesh->upload();
 
-  Mesh triangle{{0.0f, 0.5f,
-                 -0.5f, -0.5f,
-                 0.5f, -0.5f}, 
-                {2}};
-  triangle.genBuffers();
-  triangle.upload();
+  std::shared_ptr<Shader> triangleShader = std::make_shared<Shader>(
+    "shaders/basicTriangleShader.vert",
+    "shaders/basicTriangleShader.frag");
+  triangleShader->compile();
+  triangleShader->link();
 
-  Shader triangleShader{"../shaders/basicTriangleShader.vert", "../shaders/basicTriangleShader.frag"};
-  triangleShader.compile();
-  triangleShader.link();
-
-  // Element t1{};
+  Element t1{triangleMesh, triangleShader};
 
   /*****************************************************************/
 
