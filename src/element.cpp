@@ -15,6 +15,8 @@ Element::Element(std::shared_ptr<Mesh> mesh,
 
 void Element::draw() const {
   shader->use();
+  // TODO!
+  // shader->setTransform(model);
   mesh->bindVAO();
   if(mesh->hasEBO()) {
     glDrawElements(

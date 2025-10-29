@@ -1,6 +1,7 @@
 #include <glm/glm.hpp>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include <iostream>
 #include <memory>
@@ -53,7 +54,7 @@ int main() {
     std::vector<float>{
       0.0f, 0.5f,
       -0.5f, -0.5f,
-      0.3f, -0.5f},
+      0.5f, -0.5f},
     std::vector<unsigned int>{
       2});
   triangleMesh->genBuffers();
@@ -61,10 +62,10 @@ int main() {
 
   std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
     std::vector<float>{
-      0.1f, 0.5f,
-      0.1f, 0.0f,
-      0.3f, 0.5f,
-      0.3f, 0.0f},
+      -0.5f, 0.5f,
+      -0.5f, -0.5f,
+      0.5f, 0.5f,
+      0.5f, -0.5f},
     std::vector<unsigned int>{
       2},
     std::vector<unsigned int>{
@@ -73,22 +74,34 @@ int main() {
   quadMesh->genBuffers();
   quadMesh->upload();
 
-  std::shared_ptr<Shader> triangleShader = std::make_shared<Shader>(
-    "shaders/basicTriangleShader.vert",
-    "shaders/basicTriangleShader.frag");
-  triangleShader->compile();
-  triangleShader->link();
+  std::shared_ptr<Shader> basicShader = std::make_shared<Shader>(
+    "shaders/basicShader.vert",
+    "shaders/basicShader.frag");
+  basicShader->compile();
+  basicShader->link();
+
+  std::shared_ptr<Shader> basicShaderTransform = std::make_shared<Shader>(
+    "shaders/basicShaderTransform.vert",
+    "shaders/basicShader.frag");
+  basicShaderTransform->compile();
+  basicShaderTransform->link();
+  basicShaderTransform->use();
+  basicShaderTransform->setTransformLocation("transform");
+  glm::mat4 x = glm::mat4(1.0);
+  x = glm::translate(x, glm::vec3(0.1f, 0.1f, 0.0f));
+  basicShaderTransform->setTransform(x);
+  Shader::unbind();
 
   std::shared_ptr<Element> t1 = std::make_shared<Element>(
     triangleMesh,
-    triangleShader);
+    basicShaderTransform);
 
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
     quadMesh,
-    triangleShader);
+    basicShader);
 
   Scene testscene{
-    {q1, t1}, 
+    {t1}, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 
 

@@ -1,6 +1,8 @@
 #include "shader.h"
 
 #include <glad/glad.h>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <iostream>
 #include <fstream>
 
@@ -36,6 +38,16 @@ void Shader::setFragmentSource(const std::string &fragmentPath) {
   fragmentShaderSource = text;
 }
 
+void Shader::setTransformLocation(const std::string &transformName) {
+  transformLocation = glGetUniformLocation(program, transformName.c_str());
+  if(transformLocation == -1) {
+    std::cerr << "Warning: transform location failed " << std::endl;
+  }
+}
+
+void Shader::setTransform(const glm::mat4 &transformMatrix) {
+  glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transformMatrix));
+}
 
 unsigned int compileHelper(const GLenum shaderType, const char *source) {
   unsigned int shader = glCreateShader(shaderType);
@@ -72,11 +84,6 @@ void Shader::link() {
   glDeleteShader(fragmentShader);
   vertexShaderSource.clear();
   fragmentShaderSource.clear();
-}
-
-void Shader::setMat4(const std::string *variableName, const glm::mat4 &matrix) const {
-  // TODO send matrix to shader
-  // +TODO write shader using uniform mat4
 }
 
 void Shader::use() const {
