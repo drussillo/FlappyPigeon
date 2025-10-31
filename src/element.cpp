@@ -1,6 +1,8 @@
 #include "element.h"
 
 #include <glad/glad.h>
+// #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <vector>
 
 #include "mesh.h"
@@ -13,10 +15,24 @@ Element::Element(std::shared_ptr<Mesh> mesh,
                    shader{shader} {}
 
 
+void Element::setVelocity(glm::vec2 newVelocity) {
+  velocity = newVelocity;
+}
+
+void Element::addVelocity(glm::vec2 newVelocity) {
+  velocity += newVelocity;
+}
+
+
+void Element::applyModel() {
+  model = glm::mat4(1.0);
+  model = glm::translate(model, glm::vec3(position.x, position.y, 0.0f));
+  shader->setTransform(model);
+}
+
 void Element::draw() const {
   shader->use();
-  // TODO!
-  // shader->setTransform(model);
+  shader->setTransform(model);
   mesh->bindVAO();
   if(mesh->hasEBO()) {
     glDrawElements(

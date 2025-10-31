@@ -7,11 +7,11 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/dave/code/FlappyPigeon/include
 
-C_FLAGS = 
+C_FLAGS = -Wall -Wextra -Wunused -Wmissing-declarations
 
 CXX_DEFINES = 
 
 CXX_INCLUDES = -I/home/dave/code/FlappyPigeon/include
 
-CXX_FLAGS = -std=gnu++23
+CXX_FLAGS = -std=gnu++23 -Wall -Wextra -Wunused -Wmissing-declarations
 

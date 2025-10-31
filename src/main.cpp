@@ -86,10 +86,7 @@ int main() {
   basicShaderTransform->compile();
   basicShaderTransform->link();
   basicShaderTransform->use();
-  basicShaderTransform->setTransformLocation("transform");
-  glm::mat4 x = glm::mat4(1.0);
-  x = glm::translate(x, glm::vec3(0.1f, 0.1f, 0.0f));
-  basicShaderTransform->setTransform(x);
+  basicShaderTransform->setTransformLocation();
   Shader::unbind();
 
   std::shared_ptr<Element> t1 = std::make_shared<Element>(

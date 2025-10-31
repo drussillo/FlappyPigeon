@@ -22,3 +22,8 @@ target_include_directories(FlappyPigeon PRIVATE include)
 
 # Link libraries
 target_link_libraries(FlappyPigeon PRIVATE OpenGL::GL glfw)
+
+# Compiler options
+target_compile_options(FlappyPigeon PRIVATE
+  -Wall -Wextra -Wunused -Wmissing-declarations
+)

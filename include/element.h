@@ -3,6 +3,7 @@
 
 
 #include <glm/glm.hpp>
+#include <string>
 #include <memory>
 
 #include "mesh.h"
@@ -13,6 +14,10 @@ public:
   Element(std::shared_ptr<Mesh> mesh,
           std::shared_ptr<Shader> shader);
 
+  void setVelocity(glm::vec2 newVelocity);
+  void addVelocity(glm::vec2 newVelocity);
+
+  void applyModel();
   void draw() const;
   void update();
 

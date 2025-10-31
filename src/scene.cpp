@@ -27,6 +27,8 @@ void Scene::render() const {
   glClearColor(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
   glClear(GL_COLOR_BUFFER_BIT);
   for(std::shared_ptr<Element> element : elements) {
+    element->update();
+    element->applyModel();
     element->draw();
   }
 }

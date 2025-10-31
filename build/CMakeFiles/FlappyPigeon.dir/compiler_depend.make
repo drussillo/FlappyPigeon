@@ -139,6 +139,19 @@ CMakeFiles/FlappyPigeon.dir/src/element.cpp.o: /home/dave/code/FlappyPigeon/src/
   /home/dave/code/FlappyPigeon/include/glm/detail/type_half.inl \
   /home/dave/code/FlappyPigeon/include/glm/fwd.hpp \
   /home/dave/code/FlappyPigeon/include/glm/glm.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/detail/setup.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/ext/scalar_constants.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/ext/scalar_constants.inl \
+  /home/dave/code/FlappyPigeon/include/glm/gtc/constants.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/gtc/constants.inl \
+  /home/dave/code/FlappyPigeon/include/glm/ext/matrix_clip_space.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/ext/matrix_clip_space.inl \
+  /home/dave/code/FlappyPigeon/include/glm/ext/matrix_projection.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/ext/matrix_projection.inl \
+  /home/dave/code/FlappyPigeon/include/glm/ext/matrix_transform.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/ext/matrix_transform.inl \
+  /home/dave/code/FlappyPigeon/include/glm/gtc/matrix_transform.hpp \
+  /home/dave/code/FlappyPigeon/include/glm/gtc/matrix_transform.inl \
   /home/dave/code/FlappyPigeon/include/glm/integer.hpp \
   /home/dave/code/FlappyPigeon/include/glm/mat2x2.hpp \
   /home/dave/code/FlappyPigeon/include/glm/packing.hpp \
@@ -2270,20 +2283,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/lib/libOpenGL.so:
 
-/usr/include/c++/15.2.1/bits/concept_check.h:
-
-/home/dave/code/FlappyPigeon/include/glm/gtc/constants.inl:
-
-/usr/include/c++/15.2.1/bits/charconv.h:
-
-/usr/include/bits/mathcalls-helper-functions.h:
-
-/usr/include/c++/15.2.1/bit:
-
-/usr/include/c++/15.2.1/bits/atomic_wait.h:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/vector_uint1.hpp:
-
 /usr/include/c++/15.2.1/bits/allocated_ptr.h:
 
 /usr/lib/libGLdispatch.so.0:
@@ -2305,10 +2304,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /usr/include/bits/environments.h:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_float2x4.hpp:
-
-/usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/15.2.1/iosfwd:
 
 /usr/include/bits/types/error_t.h:
 
@@ -2337,10 +2332,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /usr/include/c++/15.2.1/bits/istream.tcc:
 
 /usr/include/bits/time64.h:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/matrix_double3x3.hpp:
-
-/usr/include/bits/stdlib-float.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 
@@ -2374,15 +2365,15 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/include/c++/15.2.1/tr1/riemann_zeta.tcc:
 
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/c++/15.2.1/bits/charconv.h:
+
 /usr/include/bits/math-vector.h:
 
 /usr/include/c++/15.2.1/bits/exception.h:
 
 /usr/include/bits/locale.h:
-
-/usr/include/c++/15.2.1/bits/basic_ios.tcc:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/matrix_double3x2_precision.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/detail/type_mat2x4.inl:
 
@@ -2428,11 +2419,11 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/include/asm/posix_types_64.h:
 
+/home/dave/code/FlappyPigeon/include/glm/ext/matrix_projection.hpp:
+
 /usr/include/bits/types.h:
 
 /usr/include/c++/15.2.1/bits/locale_facets.tcc:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/matrix_projection.hpp:
 
 /usr/include/c++/15.2.1/bits/ranges_util.h:
 
@@ -2451,8 +2442,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /home/dave/code/FlappyPigeon/include/mesh.h:
 
 /home/dave/code/FlappyPigeon/include/glm/vec4.hpp:
-
-/usr/include/c++/15.2.1/bits/cpp_type_traits.h:
 
 /usr/include/bits/cpu-set.h:
 
@@ -2478,6 +2467,14 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /home/dave/code/FlappyPigeon/include/glm/integer.hpp:
 
+/home/dave/code/FlappyPigeon/include/glm/gtc/constants.inl:
+
+/usr/include/c++/15.2.1/bits/concept_check.h:
+
+/usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc:
+
+/home/dave/code/FlappyPigeon/include/glm/ext/scalar_constants.inl:
+
 /home/dave/code/FlappyPigeon/include/glm/glm.hpp:
 
 /usr/include/c++/15.2.1/bits/shared_ptr_base.h:
@@ -2493,12 +2490,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /usr/include/wctype.h:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_float2x3.hpp:
-
-/usr/include/c++/15.2.1/bits/basic_string.tcc:
-
-/usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/15.2.1/bits/node_handle.h:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_double4x4_precision.hpp:
 
@@ -2530,11 +2521,21 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /home/dave/code/FlappyPigeon/include/glm/detail/func_common.inl:
 
+/home/dave/code/FlappyPigeon/include/glm/ext/matrix_projection.inl:
+
 /home/dave/code/FlappyPigeon/include/glm/ext/vector_bool4.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_double4x2.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/quaternion_geometric.inl:
+
+/usr/include/bits/stdlib-float.h:
+
+/home/dave/code/FlappyPigeon/include/glm/ext/matrix_double3x3.hpp:
+
+/usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/15.2.1/iosfwd:
 
 /home/dave/code/FlappyPigeon/include/glad/glad.h:
 
@@ -2678,6 +2679,10 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/include/asm-generic/posix_types.h:
 
+/home/dave/code/FlappyPigeon/include/glm/ext/matrix_double2x2_precision.hpp:
+
+/usr/include/c++/15.2.1/new:
+
 /home/dave/code/FlappyPigeon/include/glm/detail/type_vec4.inl:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_double2x3_precision.hpp:
@@ -2696,23 +2701,11 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /home/dave/code/FlappyPigeon/include/glm/detail/type_mat3x3.hpp:
 
-/usr/lib/libc.so:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/c++/15.2.1/bits/basic_string.h:
-
-/usr/include/c++/15.2.1/bits/uses_allocator_args.h:
-
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_float4x2.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/detail/type_vec1.hpp:
 
 /usr/include/c++/15.2.1/cstdio:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/matrix_double2x2_precision.hpp:
-
-/usr/include/c++/15.2.1/new:
 
 /home/dave/code/FlappyPigeon/include/glm/detail/type_mat3x3.inl:
 
@@ -2752,7 +2745,11 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_float4x2_precision.hpp:
 
+/usr/include/c++/15.2.1/bit:
+
 /usr/include/bits/uintn-identity.h:
+
+/home/dave/code/FlappyPigeon/include/glm/gtc/constants.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_float4x4_precision.hpp:
 
@@ -2765,10 +2762,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /usr/include/c++/15.2.1/cctype:
 
 /usr/include/c++/15.2.1/ext/concurrence.h:
-
-/usr/include/c++/15.2.1/bits/max_size_type.h:
-
-/home/dave/code/FlappyPigeon/include/glm/mat4x4.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/vector_relational.inl:
 
@@ -2844,15 +2837,15 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /home/dave/code/FlappyPigeon/include/glm/detail/type_mat3x2.inl:
 
+/home/dave/code/FlappyPigeon/include/glm/detail/type_mat2x4.hpp:
+
+/usr/include/gnu/stubs.h:
+
 /home/dave/code/FlappyPigeon/include/glm/detail/type_mat4x2.hpp:
 
 /usr/include/alloca.h:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/vector_double2_precision.hpp:
-
-/home/dave/code/FlappyPigeon/include/glm/detail/type_mat2x4.hpp:
-
-/usr/include/gnu/stubs.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
 
@@ -2902,6 +2895,10 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/lib/libm.so:
 
+/home/dave/code/FlappyPigeon/include/glm/ext/matrix_double3x2_precision.hpp:
+
+/usr/include/c++/15.2.1/bits/basic_ios.tcc:
+
 /home/dave/code/FlappyPigeon/include/glm/ext/vector_uint2_sized.hpp:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
@@ -2921,6 +2918,30 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /home/dave/code/FlappyPigeon/include/glm/ext/matrix_float2x4_precision.hpp:
 
 /home/dave/code/FlappyPigeon/include/glm/ext/vector_int3.hpp:
+
+/home/dave/code/FlappyPigeon/include/glm/mat4x4.hpp:
+
+/usr/include/c++/15.2.1/bits/max_size_type.h:
+
+/home/dave/code/FlappyPigeon/include/glm/ext/vector_uint1.hpp:
+
+/usr/include/c++/15.2.1/bits/atomic_wait.h:
+
+/usr/lib/libc.so:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/c++/15.2.1/bits/basic_string.h:
+
+/usr/include/c++/15.2.1/bits/uses_allocator_args.h:
+
+/usr/include/c++/15.2.1/bits/basic_string.tcc:
+
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/c++/15.2.1/bits/node_handle.h:
+
+/usr/include/c++/15.2.1/bits/cpp_type_traits.h:
 
 /usr/include/c++/15.2.1/bits/cxxabi_init_exception.h:
 
@@ -3154,6 +3175,12 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:
 
+/home/dave/code/FlappyPigeon/include/glm/ext/matrix_transform.inl:
+
+/usr/include/c++/15.2.1/bits/ptr_traits.h:
+
+/usr/include/ctype.h:
+
 /usr/include/c++/15.2.1/iostream:
 
 /usr/include/features-time64.h:
@@ -3221,20 +3248,6 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 /usr/include/string.h:
 
 /home/dave/code/FlappyPigeon/src/main.cpp:
-
-/usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/scalar_constants.inl:
-
-/home/dave/code/FlappyPigeon/include/glm/gtc/constants.hpp:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/matrix_projection.inl:
-
-/usr/include/c++/15.2.1/bits/ptr_traits.h:
-
-/usr/include/ctype.h:
-
-/home/dave/code/FlappyPigeon/include/glm/ext/matrix_transform.inl:
 
 /usr/include/GLFW/glfw3.h:
 
@@ -3328,9 +3341,9 @@ CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o:
 
 /home/dave/code/FlappyPigeon/include/glm/gtc/quaternion.inl:
 
-/usr/include/c++/15.2.1/bits/basic_ios.h:
-
 /usr/include/asm/bitsperlong.h:
+
+/usr/include/c++/15.2.1/bits/basic_ios.h:
 
 /home/dave/code/FlappyPigeon/include/glm/gtc/type_ptr.hpp:
 
