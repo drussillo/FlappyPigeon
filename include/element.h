@@ -13,7 +13,9 @@ class Element {
 public:
   Element(std::shared_ptr<Mesh> mesh,
           std::shared_ptr<Shader> shader);
+  // TODO add position, rotation, scale, and maybe velocity to constructor params
 
+  void setPosition(glm::vec2 newPosition);
   void setVelocity(glm::vec2 newVelocity);
   void addVelocity(glm::vec2 newVelocity);
 

@@ -62,15 +62,15 @@ int main() {
 
   std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
     std::vector<float>{
-      -0.5f, 0.5f,
-      -0.5f, -0.5f,
-      0.5f, 0.5f,
-      0.5f, -0.5f},
+      -0.2f, -0.4f,  // bottom left
+      0.2f, -0.4f,  // bottom right
+      -0.2f, 0.4f,  // top left
+      0.2f, 0.4f},  // top right
     std::vector<unsigned int>{
       2},
     std::vector<unsigned int>{
-      0, 1, 2,
-      2, 1, 3});
+      0, 3, 2,
+      0, 1, 3});
   quadMesh->genBuffers();
   quadMesh->upload();
 
@@ -95,10 +95,11 @@ int main() {
 
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
     quadMesh,
-    basicShader);
+    basicShaderTransform);
+    // q1->setPosition(glm::vec2(0.0f, 1.0f));
 
   Scene testscene{
-    {t1}, 
+    {q1}, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 
 
@@ -123,3 +124,4 @@ int main() {
 
   return 0;
 }
+

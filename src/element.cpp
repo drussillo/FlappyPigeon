@@ -1,8 +1,8 @@
 #include "element.h"
 
 #include <glad/glad.h>
-// #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <iostream>
 #include <vector>
 
 #include "mesh.h"
@@ -14,6 +14,10 @@ Element::Element(std::shared_ptr<Mesh> mesh,
                  : mesh{mesh},
                    shader{shader} {}
 
+
+void Element::setPosition(glm::vec2 newPosition) {
+  position = newPosition;
+}
 
 void Element::setVelocity(glm::vec2 newVelocity) {
   velocity = newVelocity;
@@ -51,6 +55,9 @@ void Element::draw() const {
 }
 
 void Element::update() {
+  velocity.y -= 0.000981f;
+  if(position.y < -0.5f) velocity.y = 0.04;
+
   position += velocity; // * deltaTime
 }
 
