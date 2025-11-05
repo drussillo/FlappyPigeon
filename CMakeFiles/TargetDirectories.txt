@@ -1,0 +1,3 @@
+/home/dave/code/FlappyPigeon/CMakeFiles/FlappyPigeon.dir
+/home/dave/code/FlappyPigeon/CMakeFiles/edit_cache.dir
+/home/dave/code/FlappyPigeon/CMakeFiles/rebuild_cache.dir
