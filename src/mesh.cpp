@@ -8,10 +8,10 @@ Mesh::Mesh(
            const std::vector<unsigned int> &attributeSizes,
            const std::vector<unsigned int> &indices,
            const GLenum primitiveType)
-           : primitiveType{primitiveType},
-             vertices{vertices},
+           : vertices{vertices},
              attributeSizes{attributeSizes},
-             indices{indices} {
+             indices{indices},
+             primitiveType{primitiveType} {
   if(vertices.empty()) {
     std::cerr << "Error: attempting to construct mesh without vertices" << std::endl;
   }

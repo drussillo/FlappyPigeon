@@ -49,7 +49,7 @@ void Shader::setTransform(const glm::mat4 &transformMatrix) {
   glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transformMatrix));
 }
 
-unsigned int compileHelper(const GLenum shaderType, const char *source) {
+static unsigned int compileHelper(const GLenum shaderType, const char *source) {
   unsigned int shader = glCreateShader(shaderType);
   glShaderSource(shader, 1, &source, nullptr);
   glCompileShader(shader);

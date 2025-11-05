@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/dave/code/FlappyPigeon",
+  "command": "/usr/bin/cc  -I/home/dave/code/FlappyPigeon/include -Wall -Wextra -Wunused -Wmissing-declarations -o CMakeFiles/FlappyPigeon.dir/src/glad.c.o -c /home/dave/code/FlappyPigeon/src/glad.c",
+  "file": "/home/dave/code/FlappyPigeon/src/glad.c",
+  "output": "CMakeFiles/FlappyPigeon.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/dave/code/FlappyPigeon",
+  "command": "/usr/bin/c++  -I/home/dave/code/FlappyPigeon/include -std=gnu++23 -Wall -Wextra -Wunused -Wmissing-declarations -o CMakeFiles/FlappyPigeon.dir/src/main.cpp.o -c /home/dave/code/FlappyPigeon/src/main.cpp",
+  "file": "/home/dave/code/FlappyPigeon/src/main.cpp",
+  "output": "CMakeFiles/FlappyPigeon.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/dave/code/FlappyPigeon",
+  "command": "/usr/bin/c++  -I/home/dave/code/FlappyPigeon/include -std=gnu++23 -Wall -Wextra -Wunused -Wmissing-declarations -o CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o -c /home/dave/code/FlappyPigeon/src/scene.cpp",
+  "file": "/home/dave/code/FlappyPigeon/src/scene.cpp",
+  "output": "CMakeFiles/FlappyPigeon.dir/src/scene.cpp.o"
+},
+{
+  "directory": "/home/dave/code/FlappyPigeon",
+  "command": "/usr/bin/c++  -I/home/dave/code/FlappyPigeon/include -std=gnu++23 -Wall -Wextra -Wunused -Wmissing-declarations -o CMakeFiles/FlappyPigeon.dir/src/element.cpp.o -c /home/dave/code/FlappyPigeon/src/element.cpp",
+  "file": "/home/dave/code/FlappyPigeon/src/element.cpp",
+  "output": "CMakeFiles/FlappyPigeon.dir/src/element.cpp.o"
+},
+{
+  "directory": "/home/dave/code/FlappyPigeon",
+  "command": "/usr/bin/c++  -I/home/dave/code/FlappyPigeon/include -std=gnu++23 -Wall -Wextra -Wunused -Wmissing-declarations -o CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o -c /home/dave/code/FlappyPigeon/src/mesh.cpp",
+  "file": "/home/dave/code/FlappyPigeon/src/mesh.cpp",
+  "output": "CMakeFiles/FlappyPigeon.dir/src/mesh.cpp.o"
+},
+{
+  "directory": "/home/dave/code/FlappyPigeon",
+  "command": "/usr/bin/c++  -I/home/dave/code/FlappyPigeon/include -std=gnu++23 -Wall -Wextra -Wunused -Wmissing-declarations -o CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o -c /home/dave/code/FlappyPigeon/src/shader.cpp",
+  "file": "/home/dave/code/FlappyPigeon/src/shader.cpp",
+  "output": "CMakeFiles/FlappyPigeon.dir/src/shader.cpp.o"
+}
+]

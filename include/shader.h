@@ -25,7 +25,7 @@ private:
   unsigned int program;
   unsigned int vertexShader;
   unsigned int fragmentShader;
-  unsigned int transformLocation;
+  int transformLocation;
   std::string vertexShaderSource;
   std::string fragmentShaderSource;
 };

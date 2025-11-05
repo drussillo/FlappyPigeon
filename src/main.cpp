@@ -96,10 +96,14 @@ int main() {
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
     quadMesh,
     basicShaderTransform);
-    // q1->setPosition(glm::vec2(0.0f, 1.0f));
+    q1->setPosition(glm::vec2(0.5f, 0.0f));
+  std::shared_ptr<Element> q2 = std::make_shared<Element>(
+    quadMesh,
+    basicShaderTransform);
+  q2->setPosition(glm::vec2(-0.5f, -0.5f));
 
   Scene testscene{
-    {q1}, 
+    {q1, q2}, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 
 
