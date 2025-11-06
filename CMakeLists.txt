@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 4.1.2)
 project(FlappyPigeon)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 set(CMAKE_CXX_STANDARD 23)  # use C++23
 
 # Find packages (assuming you have GLFW and OpenGL installed)
@@ -27,3 +28,4 @@ target_link_libraries(FlappyPigeon PRIVATE OpenGL::GL glfw)
 target_compile_options(FlappyPigeon PRIVATE
   -Wall -Wextra -Wunused -Wmissing-declarations
 )
+
