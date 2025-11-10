@@ -26,8 +26,8 @@ public:
 private:
   std::shared_ptr<Mesh> mesh;
   std::shared_ptr<Shader> shader;
-  glm::vec2 position = glm::vec2(0.0f, 0.0f);  // transformation
   glm::vec2 velocity = glm::vec2(0.0f, 0.0f);
+  glm::vec2 position = glm::vec2(0.0f, 0.0f);  // transformation
   float rotation = 0.0f;  // in degrees (convert to radians later)
   glm::vec2 scale = glm::vec2(1.0f, 1.0f);  // wscale, hscale
   glm::mat4 model = glm::mat4(1.0f);  // translation * rotation * scale, identity matrix by default
