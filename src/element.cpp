@@ -59,7 +59,8 @@ void Element::draw() const {
 void Element::update() {
   velocity.y -= 0.000981f;
   if(position.y < -0.5f) velocity.y = 0.04;
-  rotation += 0.5f;
+  if(velocity.y > 0) rotation += 1.0f;
+  else rotation -= 1.0f;
   scale.x += velocity.y;
   scale.y += velocity.y;
 
