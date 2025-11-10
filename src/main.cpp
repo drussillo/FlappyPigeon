@@ -50,24 +50,13 @@ int main() {
 
   /*****************************************************************/
   // create elements
-  std::shared_ptr<Mesh> triangleMesh = std::make_shared<Mesh>(
-    std::vector<float>{
-      0.0f, 0.5f,
-      -0.5f, -0.5f,
-      0.5f, -0.5f},
-    std::vector<unsigned int>{
-      2});
-  triangleMesh->genBuffers();
-  triangleMesh->upload();
-
   std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
     std::vector<float>{
-      -0.2f, -0.4f,  // bottom left
-      0.2f, -0.4f,  // bottom right
-      -0.2f, 0.4f,  // top left
-      0.2f, 0.4f},  // top right
-    std::vector<unsigned int>{
-      2},
+      -0.2f, -0.4f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom left
+      0.2f, -0.4f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom right
+      -0.2f, 0.4f, 0.0f, 1.0f, 0.0f, 1.0f,  // top left
+      0.2f, 0.4f, 0.0f, 0.0f, 1.0f, 1.0f},  // top right
+    std::vector<unsigned int>{2, 4},
     std::vector<unsigned int>{
       0, 3, 2,
       0, 1, 3});
@@ -88,10 +77,6 @@ int main() {
   basicShaderTransform->use();
   basicShaderTransform->setTransformLocation();
   Shader::unbind();
-
-  std::shared_ptr<Element> t1 = std::make_shared<Element>(
-    triangleMesh,
-    basicShaderTransform);
 
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
     quadMesh,

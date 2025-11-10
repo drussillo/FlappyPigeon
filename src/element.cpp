@@ -59,9 +59,9 @@ void Element::draw() const {
 void Element::update() {
   velocity.y -= 0.000981f;
   if(position.y < -0.5f) velocity.y = 0.04;
-  rotation+=1.0f;
-  scale.x += 0.001f;
-  scale.y += 0.001f;
+  rotation += 0.5f;
+  scale.x += velocity.y;
+  scale.y += velocity.y;
 
   position += velocity; // * deltaTime
 }
