@@ -3,7 +3,6 @@
 
 
 #include <glm/glm.hpp>
-#include <string>
 #include <memory>
 
 #include "mesh.h"
@@ -14,6 +13,7 @@ public:
   Element(std::shared_ptr<Mesh> mesh,
           std::shared_ptr<Shader> shader);
   // TODO add position, rotation, scale, and maybe velocity to constructor params
+  virtual ~Element() = default;
 
   void setPosition(glm::vec2 newPosition);
   void setVelocity(glm::vec2 newVelocity);
@@ -21,9 +21,9 @@ public:
 
   void applyModel();
   void draw() const;
-  void update();
+  virtual void update();
 
-private:
+protected:
   std::shared_ptr<Mesh> mesh;
   std::shared_ptr<Shader> shader;
   glm::vec2 velocity = glm::vec2(0.0f, 0.0f);

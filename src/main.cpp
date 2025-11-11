@@ -10,6 +10,7 @@
 #include "mesh.h"
 #include "shader.h"
 #include "element.h"
+#include "pigeon.h"
 #include "scene.h"
 
 
@@ -91,8 +92,12 @@ int main() {
     basicShaderTransform);
   q2->setPosition(glm::vec2(-0.5f, -0.5f));
 
+  std::unique_ptr<Element> pigeon = std::make_unique<Pigeon>(
+    quadMesh,
+    basicShaderTransform);
+
   Scene testscene{
-    {q1, q2}, 
+    {pigeon}, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 
 

@@ -8,7 +8,7 @@
 #include "element.h"
 
 
-Scene::Scene(const std::vector<std::shared_ptr<Element>> &elements,
+Scene::Scene(const std::vector<std::unique_ptr<Element>> &elements,
              const glm::vec4 &backgroundColor)
              : elements{elements},
                backgroundColor{backgroundColor} {}
