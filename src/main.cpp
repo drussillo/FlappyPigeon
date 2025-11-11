@@ -6,6 +6,7 @@
 #include <iostream>
 #include <memory>
 
+#include "input.h"
 #include "mesh.h"
 #include "shader.h"
 #include "element.h"
@@ -47,6 +48,9 @@ int main() {
       std::cerr << "Failed to initialize GLAD\n";
       return -1;
   }
+  /*****************************************************************/
+  // init input
+  initInput();
 
   /*****************************************************************/
   // create elements

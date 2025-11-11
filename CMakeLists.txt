@@ -16,6 +16,7 @@ add_executable(FlappyPigeon
   src/element.cpp
   src/mesh.cpp
   src/shader.cpp
+  src/input.cpp
 )
 
 # include
