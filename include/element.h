@@ -10,14 +10,15 @@
 
 class Element {
 public:
-  Element(std::shared_ptr<Mesh> mesh,
-          std::shared_ptr<Shader> shader);
+  Element(const std::shared_ptr<Mesh> mesh,
+          const std::shared_ptr<Shader> shader);
   // TODO add position, rotation, scale, and maybe velocity to constructor params
-  virtual ~Element() = default;
 
   void setPosition(glm::vec2 newPosition);
   void setVelocity(glm::vec2 newVelocity);
   void addVelocity(glm::vec2 newVelocity);
+  // void setRotation(float newRotation);
+  void setScale(glm::vec2 newScale);
 
   void applyModel();
   void draw() const;

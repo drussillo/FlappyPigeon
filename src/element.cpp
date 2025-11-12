@@ -28,6 +28,12 @@ void Element::addVelocity(glm::vec2 newVelocity) {
   velocity += newVelocity;
 }
 
+// void setRotation(float newRotation);
+
+void Element::setScale(glm::vec2 newScale) {
+  scale = newScale;
+}
+
 
 void Element::applyModel() {
   model = glm::mat4(1.0);

@@ -14,6 +14,7 @@ add_executable(FlappyPigeon
   src/main.cpp
   src/scene.cpp
   src/element.cpp
+  src/pigeon.cpp
   src/mesh.cpp
   src/shader.cpp
   src/input.cpp

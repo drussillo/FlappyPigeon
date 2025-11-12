@@ -86,18 +86,20 @@ int main() {
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
     quadMesh,
     basicShaderTransform);
-    q1->setPosition(glm::vec2(0.5f, 0.0f));
+  q1->setPosition(glm::vec2(0.5f, 0.0f));
   std::shared_ptr<Element> q2 = std::make_shared<Element>(
     quadMesh,
     basicShaderTransform);
   q2->setPosition(glm::vec2(-0.5f, -0.5f));
 
-  std::unique_ptr<Element> pigeon = std::make_unique<Pigeon>(
+  std::shared_ptr<Element> pigeon = std::make_shared<Pigeon>(
     quadMesh,
     basicShaderTransform);
 
   Scene testscene{
-    {pigeon}, 
+    {
+      std::make_shared<Pigeon>(quadMesh, basicShaderTransform)
+    }, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 
 
