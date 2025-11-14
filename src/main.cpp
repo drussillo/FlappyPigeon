@@ -57,10 +57,10 @@ int main() {
   // create elements
   std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
     std::vector<float>{
-      -0.2f, -0.4f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom left
-      0.2f, -0.4f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom right
-      -0.2f, 0.4f, 0.0f, 1.0f, 0.0f, 1.0f,  // top left
-      0.2f, 0.4f, 0.0f, 0.0f, 1.0f, 1.0f},  // top right
+      -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom left
+      0.5l, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom right
+      -0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f,  // top left
+      0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f},  // top right
     std::vector<unsigned int>{2, 4},
     std::vector<unsigned int>{
       0, 3, 2,
@@ -80,7 +80,7 @@ int main() {
   basicShaderTransform->compile();
   basicShaderTransform->link();
   basicShaderTransform->use();
-  basicShaderTransform->setTransformLocation();
+  basicShaderTransform->setMat4UniformLocation("transform");
   Shader::unbind();
 
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
@@ -98,7 +98,8 @@ int main() {
 
   Scene testscene{
     {
-      std::make_shared<Pigeon>(quadMesh, basicShaderTransform)
+      std::make_shared<Pigeon>(quadMesh, basicShaderTransform),
+      q1
     }, 
     glm::vec4(0.6, 0.8, 1.0, 1.0)};
 

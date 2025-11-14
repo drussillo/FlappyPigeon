@@ -35,17 +35,17 @@ void Element::setScale(glm::vec2 newScale) {
 }
 
 
+// applies model and uploads to uniform
 void Element::applyModel() {
   model = glm::mat4(1.0);
   model = glm::translate(model, glm::vec3(position.x, position.y, 0.0f));
   model = glm::rotate(model, glm::radians(rotation), glm::vec3(0, 0, 1));
   model = glm::scale(model, glm::vec3(scale.x, scale.y, 1));
-  shader->setTransform(model);
+  shader->setMat4Uniform("transform", model);
 }
 
 void Element::draw() const {
   shader->use();
-  shader->setTransform(model);
   mesh->bindVAO();
   if(mesh->hasEBO()) {
     glDrawElements(

@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <exception>
+#include <unordered_map>
 
 Shader::Shader(const std::string &vertexPath,
                const std::string &fragmentPath) {
@@ -38,15 +40,23 @@ void Shader::setFragmentSource(const std::string &fragmentPath) {
   fragmentShaderSource = text;
 }
 
-void Shader::setTransformLocation(const std::string &transformName) {
-  transformLocation = glGetUniformLocation(program, transformName.c_str());
-  if(transformLocation == -1) {
-    std::cerr << "Warning: transform location failed " << std::endl;
+void Shader::setMat4UniformLocation(const std::string &uniformName) {
+  int newLocation = glGetUniformLocation(program, uniformName.c_str());
+  if(newLocation == -1) {
+    std::cerr << "Warning: uniform allocation failed. " << std::endl;
+  } else {
+    mat4UniformLocations[uniformName] = newLocation;
   }
 }
 
-void Shader::setTransform(const glm::mat4 &transformMatrix) {
-  glUniformMatrix4fv(transformLocation, 1, GL_FALSE, glm::value_ptr(transformMatrix));
+void Shader::setMat4Uniform(const std::string &uniformName, const glm::mat4 &uniformMatrix) {
+  int uniformLocation;
+  try {
+    uniformLocation = mat4UniformLocations.at(uniformName);
+  } catch(std::out_of_range &e) {
+    std::cerr << "Uniform '" << uniformName << "' not found in active locations. \n" << e.what() << std::endl;
+  }
+  glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(uniformMatrix));
 }
 
 static unsigned int compileHelper(const GLenum shaderType, const char *source) {

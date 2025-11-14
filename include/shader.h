@@ -4,6 +4,7 @@
 #include <glm/glm.hpp>
 
 #include <string>
+#include <unordered_map>
 
 class Shader {
 public:
@@ -12,8 +13,9 @@ public:
 
   void setVertexSource(const std::string &vertexPath);
   void setFragmentSource(const std::string &fragmentPath);
-  void setTransformLocation(const std::string &transformName="transform");
-  void setTransform(const glm::mat4 &transformMatrix=glm::mat4(1.0f));
+  // TODO: allow input for any mat4 (for example, projection)
+  void setMat4UniformLocation(const std::string &uniformName);
+  void setMat4Uniform(const std::string &uniformName, const glm::mat4 &uniformMatrix=glm::mat4(1.0f));
 
   void compile();
   void link();
@@ -25,9 +27,10 @@ private:
   unsigned int program;
   unsigned int vertexShader;
   unsigned int fragmentShader;
-  int transformLocation;
+  std::unordered_map<std::string, int> mat4UniformLocations;
   std::string vertexShaderSource;
   std::string fragmentShaderSource;
+  // TODO: add map for  string uniform_name -> mat4 uniform
 };
 
 
