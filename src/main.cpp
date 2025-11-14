@@ -79,9 +79,7 @@ int main() {
     "shaders/basicShader.frag");
   basicShaderTransform->compile();
   basicShaderTransform->link();
-  basicShaderTransform->use();
   basicShaderTransform->setMat4UniformLocation("transform");
-  Shader::unbind();
 
   std::shared_ptr<Element> q1 = std::make_shared<Element>(
     quadMesh,

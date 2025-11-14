@@ -41,6 +41,7 @@ void Shader::setFragmentSource(const std::string &fragmentPath) {
 }
 
 void Shader::setMat4UniformLocation(const std::string &uniformName) {
+  use();
   int newLocation = glGetUniformLocation(program, uniformName.c_str());
   if(newLocation == -1) {
     std::cerr << "Warning: uniform allocation failed. " << std::endl;
@@ -50,6 +51,7 @@ void Shader::setMat4UniformLocation(const std::string &uniformName) {
 }
 
 void Shader::setMat4Uniform(const std::string &uniformName, const glm::mat4 &uniformMatrix) {
+  use();
   int uniformLocation;
   try {
     uniformLocation = mat4UniformLocations.at(uniformName);

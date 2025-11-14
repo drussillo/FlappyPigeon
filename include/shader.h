@@ -13,7 +13,6 @@ public:
 
   void setVertexSource(const std::string &vertexPath);
   void setFragmentSource(const std::string &fragmentPath);
-  // TODO: allow input for any mat4 (for example, projection)
   void setMat4UniformLocation(const std::string &uniformName);
   void setMat4Uniform(const std::string &uniformName, const glm::mat4 &uniformMatrix=glm::mat4(1.0f));
 
@@ -30,8 +29,9 @@ private:
   std::unordered_map<std::string, int> mat4UniformLocations;
   std::string vertexShaderSource;
   std::string fragmentShaderSource;
-  // TODO: add map for  string uniform_name -> mat4 uniform
 };
+
+// TODO: add projection uniform UBO (uniform buffer object) ?
 
 
 #endif
