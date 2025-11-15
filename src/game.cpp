@@ -2,17 +2,18 @@
 
 #include "scene_manager.h"
 #include "resource_manager.h"
+#include "scene_names.h"
 
 
 Game::Game() : rm(), sm(rm) {}
 
 
 void Game::init() {
-  sm.changeScene("MainMenu");
+  sm.changeScene(SceneNames::MAIN_MENU);
 }
 
 void Game::mainLoop() {
-  double dt = 0.0;
+  float dt = 0.0;
   // TODO: add deltatime calculation logic
 
   while(true) {

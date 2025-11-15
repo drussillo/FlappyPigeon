@@ -2,10 +2,10 @@
 #define SCENE_MANAGER_H
 
 
-#include <string>
 #include <memory>
 
 #include "scene.h"
+#include "scene_names.h"
 #include "resource_manager.h"
 
 
@@ -13,9 +13,9 @@ class SceneManager {
 public:
   SceneManager(ResourceManager &rm);
   
-  void changeScene(const std::string &sceneName);
+  void changeScene(SceneNames sceneName);
   void changeSceneToNext();  // uses currentScene->nextScene
-  void updateCurrent(double dt);
+  void updateCurrent(float dt);
   void renderCurrent() const;
 
 private:

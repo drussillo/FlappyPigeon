@@ -16,7 +16,7 @@ Pigeon::Pigeon(const std::shared_ptr<Mesh> mesh,
 }
 
 
-void Pigeon::update() {
+void Pigeon::update(float dt) {
   velocity.y -= 0.000981f;
   int spaceKey = glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_SPACE);
   if(spaceKey == GLFW_PRESS && !isJumping) {

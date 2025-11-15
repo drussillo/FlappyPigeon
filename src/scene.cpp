@@ -14,6 +14,11 @@ Scene::Scene(const std::vector<std::shared_ptr<Element>> &elements,
                backgroundColor{backgroundColor} {}
 
 
+SceneNames Scene::getNextScene() const {
+  return nextScene;
+}
+
+
 void Scene::setBackgroundColor(const glm::vec4 &newBackgroundColor) {
   backgroundColor = newBackgroundColor;
 }
@@ -23,9 +28,9 @@ void Scene::addElement(std::shared_ptr<Element> newElement) {
 }
 
 
-void Scene::update() {
+void Scene::update(float dt) {
   for(std::shared_ptr<Element> &element: elements) {
-    element->update();
+    element->update(dt);
     element->applyModel();
   }
 }

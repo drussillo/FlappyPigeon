@@ -63,7 +63,7 @@ void Element::draw() const {
   }
 }
 
-void Element::update() {
-  position += velocity; // * deltaTime
+void Element::update(float dt) {
+  position += velocity * dt;
 }
 

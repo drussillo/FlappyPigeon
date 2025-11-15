@@ -22,7 +22,7 @@ public:
 
   void applyModel();
   void draw() const;
-  virtual void update();
+  virtual void update(float dt);
 
 protected:
   std::shared_ptr<Mesh> mesh;

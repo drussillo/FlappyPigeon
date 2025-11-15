@@ -12,7 +12,7 @@ public:
   Pigeon(const std::shared_ptr<Mesh> mesh,
          const std::shared_ptr<Shader> shader);
 
-  void update() override;
+  void update(float dt) override;
 
 private:
   bool isJumping = false;
