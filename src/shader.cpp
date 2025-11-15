@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <exception>
 #include <unordered_map>
 
 Shader::Shader(const std::string &vertexPath,
@@ -80,6 +79,7 @@ void Shader::compile() {
   fragmentShader = compileHelper(GL_FRAGMENT_SHADER, fragmentShaderSource.c_str());
 }
 
+// links vertex and fragment shaders and clears strings
 void Shader::link() {
   program = glCreateProgram();
   glAttachShader(program, vertexShader);

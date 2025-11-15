@@ -16,6 +16,7 @@ public:
   void setBackgroundColor(const glm::vec4 &newBackgroundColor);
   void addElement(std::shared_ptr<Element> newElement);
 
+  void update(double dt);
   void render() const;
 
 private:

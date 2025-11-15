@@ -12,6 +12,9 @@ find_package(glfw3 3.3 REQUIRED)
 add_executable(FlappyPigeon 
   src/glad.c
   src/main.cpp
+  src/game.cpp
+  src/resource_manager.cpp
+  src/scene_manager.cpp
   src/scene.cpp
   src/element.cpp
   src/pigeon.cpp
