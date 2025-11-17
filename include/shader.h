@@ -32,6 +32,16 @@ private:
 };
 
 // TODO: add projection uniform UBO (uniform buffer object) ?
+// namespace ShaderUtils {
+//
+// static unsigned int projectionUBO;
+// static glm::mat4 projectionMatrix;
+//
+// void genProjectionBuffer();
+// void setProjection(glm::mat4 newProjection);
+// void uploadProjection();
+//
+// }
 
 
 #endif

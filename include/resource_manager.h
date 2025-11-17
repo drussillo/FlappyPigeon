@@ -2,6 +2,8 @@
 #define RESOURCE_MANAGER_H
 
 
+#include <glm/gtc/matrix_transform.hpp>
+
 #include <unordered_map>
 #include <string>
 #include <memory>
@@ -46,6 +48,7 @@ public:
   bool hasShader(const std::string &shaderName);
 
 private:
+  glm::mat4 projection = glm::ortho(0.0f, 720.0f, 0.0f, 720.0f);
   std::unordered_map<std::string, std::shared_ptr<Mesh>> loadedMeshes;
   std::unordered_map<std::string, std::shared_ptr<Shader>> loadedShaders;
   // std::unordered_map<std::string, std::shared_ptr<Texture>> loadedTextures;

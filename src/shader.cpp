@@ -106,3 +106,19 @@ void Shader::unbind() {
   glUseProgram(0);
 }
 
+
+// void ShaderUtils::genProjectionBuffer() {
+//   glGenBuffers(1, &projectionUBO);
+// }
+//
+// void ShaderUtils::uploadProjection() {
+//   glBindBuffer(GL_UNIFORM_BUFFER, projectionUBO);
+//   glBufferData(GL_UNIFORM_BUFFER, sizeof(projectionMatrix), &projectionMatrix, GL_STATIC_DRAW);
+//   glBindBufferBase(GL_UNIFORM_BUFFER, );
+// }
+
+// void ShaderUtils::setProjection(glm::mat4 newProjection) {}
+
+
+
+

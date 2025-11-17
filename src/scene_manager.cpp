@@ -1,9 +1,14 @@
 #include "scene_manager.h"
 
 #include <iostream>
+#include <memory>
 
 #include "scene_names.h"
 #include "resource_manager.h"
+
+#include "scene.h"
+#include "main_menu_scene.h"
+// Add new scenes here
 
 SceneManager::SceneManager(ResourceManager &rm) : rm{rm} {}
 
@@ -14,7 +19,8 @@ void SceneManager::changeScene(SceneNames sceneName) {
       break;
 
     case SceneNames::MAIN_MENU:
-      // TODO: change current scene appropriately and pass rm to current scene
+      currentScene = std::make_unique<MainMenuScene>(rm);
+      currentScene->init();
       break;
 
     // Add more scenes here

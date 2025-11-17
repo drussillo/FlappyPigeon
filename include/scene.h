@@ -5,14 +5,17 @@
 #include <vector>
 #include <memory>
 
+#include "resource_manager.h"
 #include "element.h"
 #include "scene_names.h"
 
 class Scene {
 public:
-  Scene() = default;
-  Scene(const std::vector<std::shared_ptr<Element>> &elements,
-        const glm::vec4 &backgroundColor=glm::vec4(0.2, 0.2, 0.2, 1.0));
+  Scene(ResourceManager &rm);
+  virtual ~Scene() = default;
+
+  // loads resources, generates elements, and adds elements to scene
+  virtual void init() = 0;
 
   SceneNames getNextScene() const;
   
@@ -22,11 +25,12 @@ public:
   void update(float dt);
   void render() const;
 
-private:
-  std::vector<std::shared_ptr<Element>> elements;
-  glm::vec4 backgroundColor;
-  bool finished;
-  SceneNames nextScene;  // modify internally
+protected:
+  ResourceManager &rm;
+  std::vector<std::shared_ptr<Element>> elements = {};
+  glm::vec4 backgroundColor = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
+  bool finished = false;
+  SceneNames nextScene = SceneNames::NONE;  // modify internally later (idk how i have no idea)
 };
 
 

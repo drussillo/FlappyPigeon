@@ -4,14 +4,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <iostream>
-#include <memory>
 
+#include "game.h"
 #include "input.h"
-#include "mesh.h"
-#include "shader.h"
-#include "element.h"
-#include "pigeon.h"
-#include "scene.h"
 
 
 int main() {
@@ -55,67 +50,64 @@ int main() {
 
   /*****************************************************************/
   // create elements
-  std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
-    std::vector<float>{
-      -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom left
-      0.5l, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom right
-      -0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f,  // top left
-      0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f},  // top right
-    std::vector<unsigned int>{2, 4},
-    std::vector<unsigned int>{
-      0, 3, 2,
-      0, 1, 3});
-  quadMesh->genBuffers();
-  quadMesh->upload();
-
-  std::shared_ptr<Shader> basicShader = std::make_shared<Shader>(
-    "shaders/basicShader.vert",
-    "shaders/basicShader.frag");
-  basicShader->compile();
-  basicShader->link();
-
-  std::shared_ptr<Shader> basicShaderTransform = std::make_shared<Shader>(
-    "shaders/basicShaderTransform.vert",
-    "shaders/basicShader.frag");
-  basicShaderTransform->compile();
-  basicShaderTransform->link();
-  basicShaderTransform->setMat4UniformLocation("transform");
-
-  std::shared_ptr<Element> q1 = std::make_shared<Element>(
-    quadMesh,
-    basicShaderTransform);
-  q1->setPosition(glm::vec2(0.5f, 0.0f));
-  std::shared_ptr<Element> q2 = std::make_shared<Element>(
-    quadMesh,
-    basicShaderTransform);
-  q2->setPosition(glm::vec2(-0.5f, -0.5f));
-
-  std::shared_ptr<Element> pigeon = std::make_shared<Pigeon>(
-    quadMesh,
-    basicShaderTransform);
-
-  Scene testscene{
-    {
-      std::make_shared<Pigeon>(quadMesh, basicShaderTransform),
-      q1
-    }, 
-    glm::vec4(0.6, 0.8, 1.0, 1.0)};
-
-
+  // std::shared_ptr<Mesh> quadMesh = std::make_shared<Mesh>(
+  //   std::vector<float>{
+  //     -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom left
+  //     0.5l, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f,  // bottom right
+  //     -0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f,  // top left
+  //     0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f},  // top right
+  //   std::vector<unsigned int>{2, 4},
+  //   std::vector<unsigned int>{
+  //     0, 3, 2,
+  //     0, 1, 3});
+  // quadMesh->genBuffers();
+  // quadMesh->upload();
+  //
+  // std::shared_ptr<Shader> basicShader = std::make_shared<Shader>(
+  //   "shaders/basicShader.vert",
+  //   "shaders/basicShader.frag");
+  // basicShader->compile();
+  // basicShader->link();
+  //
+  // std::shared_ptr<Shader> basicShaderTransform = std::make_shared<Shader>(
+  //   "shaders/basicShaderTransform.vert",
+  //   "shaders/basicShader.frag");
+  // basicShaderTransform->compile();
+  // basicShaderTransform->link();
+  // basicShaderTransform->setMat4UniformLocation("transform");
+  //
+  // std::shared_ptr<Element> q1 = std::make_shared<Element>(
+  //   quadMesh,
+  //   basicShaderTransform);
+  // q1->setPosition(glm::vec2(0.5f, 0.0f));
+  // std::shared_ptr<Element> q2 = std::make_shared<Element>(
+  //   quadMesh,
+  //   basicShaderTransform);
+  // q2->setPosition(glm::vec2(-0.5f, -0.5f));
+  //
+  // std::shared_ptr<Element> pigeon = std::make_shared<Pigeon>(
+  //   quadMesh,
+  //   basicShaderTransform);
+  //
+  // Scene testscene{
+  //   {
+  //     std::make_shared<Pigeon>(quadMesh, basicShaderTransform),
+  //     q1
+  //   }, 
+  //   glm::vec4(0.6, 0.8, 1.0, 1.0)};
+  //
+  //
   /*****************************************************************/
-
   glViewport(0, 0, res_w, res_h);
+
+
   /*****************************************************************/
-  // main loop
-  while (!glfwWindowShouldClose(window)) {
-    /*****************************************/
+  // Game instance and main loop
 
-    testscene.render();
+  Game FlappyPigeonInstance;
+  FlappyPigeonInstance.init();
 
-    /*****************************************/
-    glfwSwapBuffers(window);
-    glfwPollEvents();
-  }
+  FlappyPigeonInstance.mainLoop(window);
 
   // Clean up
   glfwDestroyWindow(window);

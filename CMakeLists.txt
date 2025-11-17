@@ -21,6 +21,7 @@ add_executable(FlappyPigeon
   src/mesh.cpp
   src/shader.cpp
   src/input.cpp
+  src/main_menu_scene.cpp
 )
 
 # include

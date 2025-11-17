@@ -5,13 +5,11 @@
 #include <vector>
 #include <memory>
 
+#include "resource_manager.h"
 #include "element.h"
 
 
-Scene::Scene(const std::vector<std::shared_ptr<Element>> &elements,
-             const glm::vec4 &backgroundColor)
-             : elements{elements},
-               backgroundColor{backgroundColor} {}
+Scene::Scene(ResourceManager &rm) : rm{rm} {}
 
 
 SceneNames Scene::getNextScene() const {
