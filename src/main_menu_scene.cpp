@@ -16,18 +16,27 @@ MainMenuScene::MainMenuScene(ResourceManager &rm) : Scene(rm) {};
 
 void MainMenuScene::init() {
   // backgroundColor = glm::vec4(0.6, 0.8, 1.0, 1.0);
-  std::shared_ptr<Shader> basicShader = std::make_shared<Shader>(
+
+  rm.loadMesh(
+    "quad",
+    { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
+      0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
+      1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
+      1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
+    {3, 4},
+    { 0, 1, 2,
+      2, 1, 3 }
+  );
+
+  rm.loadShader(
+    "defaultShader",
     "shaders/basicShaderTransform.vert", 
     "shaders/basicShader.frag"
   );
-  basicShader->compile();
-  basicShader->link();
-  
-  // TODO
-  // std::shared_ptr<Mesh> quad = std::make_shared<Mesh>(
-  //   std::vector<float>{
-  //     1.0f, 1.0f,
-  //   }
-  // );
+  rm.getShader("defaultShader")->setMat4UniformLocation("transform");
+
+  elements = {
+    std::make_shared<Pigeon>(rm.getMesh("quad"), rm.getShader("defaultShader"))
+  };
 }
 

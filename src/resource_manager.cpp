@@ -13,6 +13,8 @@ void ResourceManager::loadMesh(const std::string &meshName,
                                const GLenum primitiveType) {
   if(!hasMesh(meshName)) {
     loadedMeshes[meshName] = std::make_shared<Mesh>(vertices, attributeSizes, indices, primitiveType);
+    loadedMeshes[meshName]->genBuffers();
+    loadedMeshes[meshName]->upload();
   } else {
     std::cerr << "Warning: attempted to load mesh resource twice. Mesh name: '" << meshName << "'" << std::endl;
   }
@@ -50,6 +52,8 @@ void ResourceManager::loadShader(const std::string &shaderName,
                 const std::string &fragmentPath) {
   if(!hasShader(shaderName)) {
     loadedShaders[shaderName] = std::make_shared<Shader>(vertexPath, fragmentPath);
+    loadedShaders[shaderName]->compile();
+    loadedShaders[shaderName]->link();
   } else {
     std::cerr << "Warning: attempted to load shader resource twice. Shader name: '" << shaderName << "'" << std::endl;
   }
