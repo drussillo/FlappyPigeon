@@ -27,8 +27,10 @@ void Pigeon::update(float dt) {
     isJumping = false;
   }
 
-  // if(position.y < -0.5f) velocity.y = 0.04;
-  if(position.y <= 0) velocity.y = 10.0f;
+  if(position.y <= 0) {
+    if(velocity.y > -10.0f) velocity.y = 10.0f;
+    else { position.y = 1.0f; velocity.y = -(velocity.y) * 3/4; }
+  }
 
   // if(velocity.y > 0) rotation += 1.0f;
   // else rotation -= 1.0f;
