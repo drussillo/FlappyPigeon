@@ -34,10 +34,10 @@ void MainMenuScene::init() {
 
   rm.loadShader(
     "defaultShader",
-    "shaders/basicShaderTransform.vert", 
-    "shaders/basicShader.frag"
+    "shaders/defaultShader.vert", 
+    "shaders/defaultShader.frag"
   );
-  rm.getShader("defaultShader")->setMat4UniformLocation("transform");
+  rm.getShader("defaultShader")->setMat4UniformLocation("uTransform");
 
   elements = {
     std::make_shared<Pigeon>(rm.getMesh("quad"), rm.getShader("defaultShader"))
