@@ -5,9 +5,6 @@
 #include <vector>
 
 #include "resource_manager.h"
-#include "shader.h"
-#include "mesh.h"
-#include "element.h"
 #include "pigeon.h"
 
 
@@ -16,28 +13,6 @@ MainMenuScene::MainMenuScene(ResourceManager &rm) : Scene(rm) {};
 
 void MainMenuScene::init() {
   // backgroundColor = glm::vec4(0.6, 0.8, 1.0, 1.0);
-
-  rm.loadMesh(
-    "quad",
-    // { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
-    //   0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
-    //   1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
-    //   1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
-    { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
-      0.0f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
-      0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
-      0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
-    {2, 4},
-    { 0, 1, 2,
-      2, 1, 3 }
-  );
-
-  rm.loadShader(
-    "defaultShader",
-    "shaders/defaultShader.vert", 
-    "shaders/defaultShader.frag"
-  );
-  rm.getShader("defaultShader")->setMat4UniformLocation("uTransform");
 
   elements = {
     std::make_shared<Pigeon>(rm.getMesh("quad"), rm.getShader("defaultShader"))

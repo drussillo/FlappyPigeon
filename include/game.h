@@ -16,6 +16,8 @@ public:
   void mainLoop(GLFWwindow *window);  // pass resources to scenes (will use for current scene)
 
 private:
+  glm::vec2 resolution;
+  ProjectionUBO projection;
   ResourceManager rm;
   SceneManager sm;
 };

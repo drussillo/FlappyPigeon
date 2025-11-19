@@ -4,6 +4,7 @@
 #include <glm/glm.hpp>
 
 #include <string>
+#include <memory>
 #include <unordered_map>
 
 class Shader {
@@ -15,6 +16,7 @@ public:
   void setFragmentSource(const std::string &fragmentPath);
   void setMat4UniformLocation(const std::string &uniformName);
   void setMat4Uniform(const std::string &uniformName, const glm::mat4 &uniformMatrix=glm::mat4(1.0f));
+  unsigned int getProgram() const;
 
   void compile();
   void link();
@@ -39,6 +41,21 @@ void setProjection(glm::mat4 newProjection);
 void uploadProjection();
 
 }
+
+
+class ProjectionUBO {
+public:
+  ProjectionUBO() = default;
+  ~ProjectionUBO();
+  
+  void setProjectionMatrix(const glm::mat4 &newProjection);
+  void genProjectionBuffer();
+  void uploadProjection(const std::shared_ptr<Shader> shader);
+
+private:
+  unsigned int UBO;
+  glm::mat4 projectionMatrix;
+};
 
 
 #endif

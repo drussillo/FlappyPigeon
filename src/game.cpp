@@ -12,6 +12,30 @@ Game::Game() : rm(), sm(rm) {}
 
 
 void Game::init() {
+  rm.loadMesh(
+    "quad",
+    { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
+      0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
+      1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
+      1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
+    {2, 4},
+    { 1, 0, 2,
+      2, 0, 3 }
+  );
+
+  rm.loadShader(
+    "defaultShader",
+    "shaders/defaultShader.vert", 
+    "shaders/defaultShader.frag"
+  );
+  rm.getShader("defaultShader")->setMat4UniformLocation("uTransform");
+
+  // upload UBO
+  resolution = glm::vec2(1280.0f, 720.0f);
+  projection.setProjectionMatrix(glm::ortho(0.0f, resolution.x, 0.0f, resolution.y));
+  projection.genProjectionBuffer();
+  projection.uploadProjection(rm.getShader("defaultShader"));
+
   sm.changeScene(SceneNames::MAIN_MENU);
 }
 

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <memory>
 #include <unordered_map>
 
 Shader::Shader(const std::string &vertexPath,
@@ -60,6 +61,11 @@ void Shader::setMat4Uniform(const std::string &uniformName, const glm::mat4 &uni
   glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(uniformMatrix));
 }
 
+unsigned int Shader::getProgram() const {
+  return program;
+}
+
+
 static unsigned int compileHelper(const GLenum shaderType, const char *source) {
   unsigned int shader = glCreateShader(shaderType);
   glShaderSource(shader, 1, &source, nullptr);
@@ -107,27 +113,42 @@ void Shader::unbind() {
 }
 
 
-// void ShaderUtils::genProjectionBuffer() {
-//   glGenBuffers(1, &projectionUBO);
-// }
-//
-// void ShaderUtils::uploadProjection() {
-//   glBindBuffer(GL_UNIFORM_BUFFER, projectionUBO);
-//   glBufferData(GL_UNIFORM_BUFFER, sizeof(projectionMatrix), &projectionMatrix, GL_STATIC_DRAW);
-//   glBindBufferBase(GL_UNIFORM_BUFFER, );
-// }
+
+ProjectionUBO::~ProjectionUBO() {
+  glDeleteBuffers(1, &UBO);
+}
+
+
+void ProjectionUBO::setProjectionMatrix(const glm::mat4 &newProjection) {
+  projectionMatrix = newProjection;
+}
+
+void ProjectionUBO::genProjectionBuffer() {
+  glGenBuffers(1, &UBO);
+  glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+  glBufferData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), nullptr, GL_DYNAMIC_DRAW);
+}
+
+
+void ProjectionUBO::uploadProjection(const std::shared_ptr<Shader> shader) {
+  glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+  glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projectionMatrix));
+
+  unsigned int blockIndex = glGetUniformBlockIndex(shader->getProgram(), "Matrices");
+  glUniformBlockBinding(shader->getProgram(), blockIndex, 0);
+  glBindBufferBase(GL_UNIFORM_BUFFER, 0, UBO);
+}
+
+
 
 /*
   glBindFramebuffer(GL_FRAMEBUFFER, fbo);
   glViewport(0, 0, 320, 180);
   projection = glm::ortho(0.0f, 320.0f, 0.0f, 180.0f, -1.0f, 1.0f);
+??
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
   glViewport(0, 0, windowWidth, windowHeight);
   drawFullscreenQuad(fboTexture);
 */
-
-// void ShaderUtils::setProjection(glm::mat4 newProjection) {}
-
-
 
 
