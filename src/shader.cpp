@@ -117,6 +117,15 @@ void Shader::unbind() {
 //   glBindBufferBase(GL_UNIFORM_BUFFER, );
 // }
 
+/*
+  glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+  glViewport(0, 0, 320, 180);
+  projection = glm::ortho(0.0f, 320.0f, 0.0f, 180.0f, -1.0f, 1.0f);
+  glBindFramebuffer(GL_FRAMEBUFFER, 0);
+  glViewport(0, 0, windowWidth, windowHeight);
+  drawFullscreenQuad(fboTexture);
+*/
+
 // void ShaderUtils::setProjection(glm::mat4 newProjection) {}
 
 
