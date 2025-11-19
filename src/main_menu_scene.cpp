@@ -19,11 +19,15 @@ void MainMenuScene::init() {
 
   rm.loadMesh(
     "quad",
+    // { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
+    //   0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
+    //   1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
+    //   1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
     { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
-      0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
-      1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
-      1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
-    {3, 4},
+      0.0f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
+      0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
+      0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
+    {2, 4},
     { 0, 1, 2,
       2, 1, 3 }
   );
