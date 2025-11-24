@@ -13,11 +13,6 @@ Texture::~Texture() {
 }
 
 
-unsigned int Texture::getID() {
-  return texture;
-}
-
-
 void Texture::generate() {
   glGenTextures(1, &texture);
 }
@@ -42,4 +37,10 @@ void Texture::load() {
   } else {
     std::cerr << "Error: failed to load texture" << std::endl;
   }
+}
+
+void Texture::bindUnit(const unsigned int shaderProgram) {
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, texture);
+  glUniform1i(glGetUniformLocation(shaderProgram, "texture1"), 0);
 }

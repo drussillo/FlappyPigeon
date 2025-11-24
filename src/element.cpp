@@ -51,9 +51,7 @@ void Element::applyModel() {
 void Element::draw() const {
   shader->use();
   mesh->bindVAO();
-  glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE_2D, texture->getID());
-  glUniform1i(glGetUniformLocation(shader->getProgram(), "texture1"), 0);
+  texture->bindUnit(shader->getProgram());
   if(mesh->hasEBO()) {
     glDrawElements(
       mesh->getType(),
