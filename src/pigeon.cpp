@@ -2,15 +2,12 @@
 
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
-#include <memory>
 
 #include "element.h"
-#include "mesh.h"
-#include "shader.h"
+#include "resource_manager.h"
 
-Pigeon::Pigeon(const std::shared_ptr<Mesh> mesh,
-               const std::shared_ptr<Shader> shader) 
-               : Element(mesh, shader) {
+Pigeon::Pigeon(ResourceManager &rm)
+               : Element(rm.getMesh("quad"), rm.getShader("defaultShader"), rm.getTexture("Pigeon")) {
   setPosition(glm::vec2(40.0f, 40.0f));
   setScale(glm::vec2(12.0f, 9.0f));
 }

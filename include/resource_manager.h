@@ -11,6 +11,7 @@
 
 #include "mesh.h"
 #include "shader.h"
+#include "texture.h"
 
 
 class ResourceManager {
@@ -41,16 +42,29 @@ public:
                                            const std::string &fragmentPath="");
   void unloadShader(const std::string &shaderName);
 
+
+  // construct and add texture to map
+  void loadTexture(const std::string &textureName,
+                   const std::string &path,
+                   int width,
+                   int height,
+                   int nrChannels);
+  std::shared_ptr<Texture> getTexture(const std::string &textureName);
+  // std::shared_ptr<Texture> loadAndGetTexture()
+  void unloadTexture(const std::string &textureName);
+
+
   // stops tracking all resources by removing them from maps
   void clear();
-
-  bool hasMesh(const std::string &meshName);
-  bool hasShader(const std::string &shaderName);
 
 private:
   std::unordered_map<std::string, std::shared_ptr<Mesh>> loadedMeshes;
   std::unordered_map<std::string, std::shared_ptr<Shader>> loadedShaders;
-  // std::unordered_map<std::string, std::shared_ptr<Texture>> loadedTextures;
+  std::unordered_map<std::string, std::shared_ptr<Texture>> loadedTextures;
+
+  bool hasMesh(const std::string &meshName);
+  bool hasShader(const std::string &shaderName);
+  bool hasTexture(const std::string &textureName);
 };
 
 

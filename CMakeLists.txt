@@ -11,6 +11,7 @@ find_package(glfw3 3.3 REQUIRED)
 # Add source files
 add_executable(FlappyPigeon 
   src/glad.c
+  src/stb/stb_image.cpp
   src/main.cpp
   src/game.cpp
   src/resource_manager.cpp
@@ -22,6 +23,7 @@ add_executable(FlappyPigeon
   src/shader.cpp
   src/input.cpp
   src/main_menu_scene.cpp
+  src/texture.cpp
 )
 
 # include

@@ -4,16 +4,18 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <vector>
 
 #include "mesh.h"
 #include "shader.h"
+#include "texture.h"
 
 
 Element::Element(const std::shared_ptr<Mesh> mesh,
-                 const std::shared_ptr<Shader> shader)
+                 const std::shared_ptr<Shader> shader,
+                 const std::shared_ptr<Texture> texture)
                  : mesh{mesh},
-                   shader{shader} {}
+                   shader{shader},
+                   texture{texture} {}
 
 
 void Element::setPosition(glm::vec2 newPosition) {
@@ -49,6 +51,9 @@ void Element::applyModel() {
 void Element::draw() const {
   shader->use();
   mesh->bindVAO();
+  glActiveTexture(GL_TEXTURE0);
+  glBindTexture(GL_TEXTURE_2D, texture->getID());
+  glUniform1i(glGetUniformLocation(shader->getProgram(), "texture1"), 0);
   if(mesh->hasEBO()) {
     glDrawElements(
       mesh->getType(),

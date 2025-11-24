@@ -16,7 +16,7 @@ void ResourceManager::loadMesh(const std::string &meshName,
     loadedMeshes[meshName]->genBuffers();
     loadedMeshes[meshName]->upload();
   } else {
-    std::cerr << "Warning: attempted to load mesh resource twice. Mesh name: '" << meshName << "'" << std::endl;
+    std::cerr << "Error: attempted to load mesh resource twice. Mesh name: '" << meshName << "'" << std::endl;
   }
 }
 
@@ -24,7 +24,7 @@ std::shared_ptr<Mesh> ResourceManager::getMesh(const std::string &meshName) {
   if(hasMesh(meshName)) {
     return loadedMeshes[meshName];
   } else {
-    std::cerr << "Warning: attempted to get pointer to unloaded mesh. Mesh name: '" << meshName << "'" << std::endl;
+    std::cerr << "Error: attempted to get pointer to unloaded mesh. Mesh name: '" << meshName << "'" << std::endl;
     return nullptr;
   }
 }
@@ -42,7 +42,7 @@ void ResourceManager::unloadMesh(const std::string &meshName) {
   if(hasMesh(meshName)) {
     loadedMeshes.erase(meshName);
   } else {
-    std::cerr << "Warning: attempted to unload unloaded mesh. Mesh name: '" << meshName << "'" << std::endl;
+    std::cerr << "Error: attempted to unload unloaded mesh. Mesh name: '" << meshName << "'" << std::endl;
   }
 }
 
@@ -55,7 +55,7 @@ void ResourceManager::loadShader(const std::string &shaderName,
     loadedShaders[shaderName]->compile();
     loadedShaders[shaderName]->link();
   } else {
-    std::cerr << "Warning: attempted to load shader resource twice. Shader name: '" << shaderName << "'" << std::endl;
+    std::cerr << "Error: attempted to load shader resource twice. Shader name: '" << shaderName << "'" << std::endl;
   }
 }
 
@@ -63,7 +63,7 @@ std::shared_ptr<Shader> ResourceManager::getShader(const std::string &shaderName
   if(hasShader(shaderName)) {
     return loadedShaders[shaderName];
   } else {
-    std::cerr << "Warning: attempted to get pointer to unloaded shader. Shader name: '" << shaderName << "'" << std::endl;
+    std::cerr << "Error: attempted to get pointer to unloaded shader. Shader name: '" << shaderName << "'" << std::endl;
     return nullptr;
   }
 }
@@ -79,7 +79,41 @@ void ResourceManager::unloadShader(const std::string &shaderName) {
   if(hasShader(shaderName)) {
     loadedShaders.erase(shaderName);
   } else {
-    std::cerr << "Warning: attempted to unload unloaded shader. Shader name: '" << shaderName << "'" << std::endl;
+    std::cerr << "Error: attempted to unload unloaded shader. Shader name: '" << shaderName << "'" << std::endl;
+  }
+}
+
+
+void ResourceManager::loadTexture(const std::string &textureName,
+                                  const std::string &path,
+                                  int width,
+                                  int height,
+                                  int nrChannels) {
+  if(!hasTexture(textureName)) {
+    loadedTextures[textureName] = std::make_shared<Texture>(path, width, height, nrChannels);
+    loadedTextures[textureName]->generate();
+    loadedTextures[textureName]->load();
+  } else {
+    std::cerr << "Error: attempted to load texture resource twice. Shader name: '" << textureName << "'" << std::endl;
+  }
+}
+
+std::shared_ptr<Texture> ResourceManager::getTexture(const std::string &textureName) {
+  if(hasTexture(textureName)) {
+    return loadedTextures[textureName];
+  } else {
+    std::cerr << "Error: attempted to get pointer to unloaded texture. Texture name: '" << textureName << "'" << std::endl;
+    return nullptr;
+  }
+}
+
+// std::shared_ptr<Texture> ResourceManager::loadAndGetTexture()
+
+void ResourceManager::unloadTexture(const std::string &textureName) {
+  if(hasTexture(textureName)) {
+    loadedTextures.erase(textureName);
+  } else {
+    std::cerr << "Error: attempted to unload unloaded texture. Texture name: '" << textureName << "'" << std::endl;
   }
 }
 
@@ -89,11 +123,17 @@ void ResourceManager::clear() {
   loadedShaders.clear();
 }
 
+
+
 bool ResourceManager::hasMesh(const std::string &meshName) {
   return loadedMeshes.find(meshName) != loadedMeshes.end();
 }
 
 bool ResourceManager::hasShader(const std::string &shaderName) {
   return loadedShaders.find(shaderName) != loadedShaders.end();
+}
+
+bool ResourceManager::hasTexture(const std::string &textureName) {
+  return loadedTextures.find(textureName) != loadedTextures.end();
 }
 

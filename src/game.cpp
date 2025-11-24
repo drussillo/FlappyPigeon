@@ -14,11 +14,11 @@ Game::Game() : rm(), sm(rm) {}
 void Game::init() {
   rm.loadMesh(
     "quad",
-    { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // bottom left
-      0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top left
-      1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,    // top right
-      1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
-    {2, 4},
+    { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,    // bottom left
+      0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,    // top left
+      1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,    // top right
+      1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },  // bottom right
+    {2, 4, 2},
     { 1, 0, 2,
       2, 0, 3 }
   );

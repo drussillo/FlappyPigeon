@@ -12,10 +12,12 @@ MainMenuScene::MainMenuScene(ResourceManager &rm) : Scene(rm) {};
 
 
 void MainMenuScene::init() {
-  // backgroundColor = glm::vec4(0.6, 0.8, 1.0, 1.0);
+  backgroundColor = glm::vec4(0.6, 0.8, 1.0, 1.0);
+
+  rm.loadTexture("Pigeon", "sprites/pigeon_sprite.png", 12, 9, 4);
 
   elements = {
-    std::make_shared<Pigeon>(rm.getMesh("quad"), rm.getShader("defaultShader"))
+    std::make_shared<Pigeon>(rm)
   };
 }
 

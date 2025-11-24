@@ -7,11 +7,13 @@
 
 #include "mesh.h"
 #include "shader.h"
+#include "texture.h"
 
 class Element {
 public:
   Element(const std::shared_ptr<Mesh> mesh,
-          const std::shared_ptr<Shader> shader);
+          const std::shared_ptr<Shader> shader,
+          const std::shared_ptr<Texture> textue);
   // TODO add position, rotation, scale, and maybe velocity to constructor params
 
   void setPosition(glm::vec2 newPosition);
@@ -27,6 +29,7 @@ public:
 protected:
   std::shared_ptr<Mesh> mesh;
   std::shared_ptr<Shader> shader;
+  std::shared_ptr<Texture> texture;
   glm::vec2 velocity = glm::vec2(0.0f, 0.0f);
   glm::vec2 position = glm::vec2(0.0f, 0.0f);  // transformation
   float rotation = 0.0f;  // in degrees (convert to radians later)
