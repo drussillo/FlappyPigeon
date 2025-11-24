@@ -28,7 +28,9 @@ void Element::addVelocity(glm::vec2 newVelocity) {
   velocity += newVelocity;
 }
 
-// void setRotation(float newRotation);
+void Element::setRotation(float newRotation) {
+  rotation = newRotation;
+}
 
 void Element::setScale(glm::vec2 newScale) {
   scale = newScale;

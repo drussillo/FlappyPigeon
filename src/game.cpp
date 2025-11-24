@@ -31,7 +31,7 @@ void Game::init() {
   rm.getShader("defaultShader")->setMat4UniformLocation("uTransform");
 
   // upload UBO
-  resolution = glm::vec2(1280.0f, 720.0f);
+  resolution = glm::vec2(160.0f, 90.0f);
   projection.setProjectionMatrix(glm::ortho(0.0f, resolution.x, 0.0f, resolution.y));
   projection.genProjectionBuffer();
   projection.uploadProjection(rm.getShader("defaultShader"));

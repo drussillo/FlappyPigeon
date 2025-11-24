@@ -11,26 +11,28 @@
 Pigeon::Pigeon(const std::shared_ptr<Mesh> mesh,
                const std::shared_ptr<Shader> shader) 
                : Element(mesh, shader) {
-  setPosition(glm::vec2(300.0f, 500.0f));
-  setScale(glm::vec2(100.0f, 100.0f));
+  setPosition(glm::vec2(40.0f, 40.0f));
+  setScale(glm::vec2(12.0f, 9.0f));
 }
 
 
 void Pigeon::update(float dt) {
-  velocity.y -= 0.4f;
+  velocity.y -= 0.03f;
   int spaceKey = glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_SPACE);
   if(spaceKey == GLFW_PRESS && !isJumping) {
     isJumping = true;
-    velocity.y = 12.5f;
+    velocity.y = 1.05f;
   }
   if(spaceKey == GLFW_RELEASE) {
     isJumping = false;
   }
+  
+  setRotation(velocity.y * 10);
 
-  if(position.y <= 0) {
-    if(velocity.y > -10.0f) velocity.y = 10.0f;
-    else { position.y = 1.0f; velocity.y = -(velocity.y) * 3/4; }
-  }
+  // if(position.y <= 0) {
+  //   if(velocity.y > -10.0f) velocity.y = 10.0f;
+  //   else { position.y = 1.0f; velocity.y = -(velocity.y) * 3/4; }
+  // }
 
   // if(velocity.y > 0) rotation += 1.0f;
   // else rotation -= 1.0f;

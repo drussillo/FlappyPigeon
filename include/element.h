@@ -17,7 +17,7 @@ public:
   void setPosition(glm::vec2 newPosition);
   void setVelocity(glm::vec2 newVelocity);
   void addVelocity(glm::vec2 newVelocity);
-  // void setRotation(float newRotation);
+  void setRotation(float newRotation);
   void setScale(glm::vec2 newScale);
 
   void applyModel();
