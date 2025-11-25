@@ -11,6 +11,7 @@ public:
   MainMenuScene(ResourceManager &rm);
 
   void init() override;
+  void exit() override;
 };
 
 

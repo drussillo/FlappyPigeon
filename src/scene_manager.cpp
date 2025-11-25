@@ -13,23 +13,25 @@
 SceneManager::SceneManager(ResourceManager &rm) : rm{rm} {}
 
 void SceneManager::changeScene(SceneNames sceneName) {
-  switch(sceneName) {
+  if(currentScene != nullptr) {
+    currentScene->exit();
+  }
 
+  switch(sceneName) {
     case SceneNames::NONE:
       break;
-
     case SceneNames::MAIN_MENU:
       currentScene = std::make_unique<MainMenuScene>(rm);
-      currentScene->init();
       break;
 
     // Add more scenes here
 
     default:
       std::cerr << "Error: attempting to switch to invalid scene '" << (int)sceneName << "'" << std::endl;
-      break;
+      return;
   }
 
+  currentScene->init();
 }
 
 void SceneManager::changeSceneToNext() {

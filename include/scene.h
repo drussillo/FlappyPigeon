@@ -16,6 +16,7 @@ public:
 
   // loads resources, generates elements, and adds elements to scene
   virtual void init() = 0;
+  virtual void exit() = 0;
 
   SceneNames getNextScene() const;
   

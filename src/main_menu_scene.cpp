@@ -21,3 +21,6 @@ void MainMenuScene::init() {
   };
 }
 
+void MainMenuScene::exit() {
+  rm.unloadTexture("Pigeon");
+}
