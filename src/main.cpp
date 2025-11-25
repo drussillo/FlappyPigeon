@@ -5,8 +5,8 @@
 
 #include <iostream>
 
-#include "game.h"
-#include "input.h"
+#include "engine/game.h"
+#include "engine/input.h"
 
 
 int main() {

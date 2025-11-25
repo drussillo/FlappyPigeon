@@ -7,6 +7,7 @@
 #include <memory>
 #include <unordered_map>
 
+
 class Shader {
 public:
   Shader(const std::string &vertexPath="", const std::string &fragmentPath="");

@@ -1,11 +1,9 @@
-#include "main_menu_scene.h"
+#include "scenes/main_menu_scene.h"
 
 #include <glm/glm.hpp>
-#include <memory>
-#include <vector>
 
-#include "resource_manager.h"
-#include "pigeon.h"
+#include "engine/resource_manager.h"
+#include "elements/pigeon.h"
 
 
 MainMenuScene::MainMenuScene(ResourceManager &rm) : Scene(rm) {};

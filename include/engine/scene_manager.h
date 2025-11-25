@@ -4,9 +4,9 @@
 
 #include <memory>
 
-#include "scene.h"
-#include "scene_names.h"
-#include "resource_manager.h"
+#include "scenes/scene.h"
+#include "scenes/scene_names.h"
+#include "engine/resource_manager.h"
 
 
 class SceneManager {

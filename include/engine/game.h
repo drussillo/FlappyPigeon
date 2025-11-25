@@ -5,8 +5,8 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-#include "resource_manager.h"
-#include "scene_manager.h"
+#include "engine/resource_manager.h"
+#include "engine/scene_manager.h"
 
 class Game {
 public:

@@ -1,12 +1,11 @@
-#include "shader.h"
+#include "graphics/shader.h"
 
 #include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
 #include <fstream>
-#include <memory>
-#include <unordered_map>
+
 
 Shader::Shader(const std::string &vertexPath,
                const std::string &fragmentPath) {

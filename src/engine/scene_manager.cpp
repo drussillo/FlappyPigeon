@@ -1,13 +1,12 @@
-#include "scene_manager.h"
+#include "engine/scene_manager.h"
 
 #include <iostream>
-#include <memory>
 
-#include "scene_names.h"
-#include "resource_manager.h"
+#include "scenes/scene_names.h"
+#include "engine/resource_manager.h"
 
-#include "scene.h"
-#include "main_menu_scene.h"
+#include "scenes/scene.h"
+#include "scenes/main_menu_scene.h"
 // Add new scenes here
 
 SceneManager::SceneManager(ResourceManager &rm) : rm{rm} {}

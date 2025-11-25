@@ -5,9 +5,9 @@
 #include <vector>
 #include <memory>
 
-#include "resource_manager.h"
-#include "element.h"
-#include "scene_names.h"
+#include "engine/resource_manager.h"
+#include "elements/element.h"
+#include "scenes/scene_names.h"
 
 class Scene {
 public:

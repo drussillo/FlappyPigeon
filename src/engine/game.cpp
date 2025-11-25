@@ -1,11 +1,11 @@
-#include "game.h"
+#include "engine/game.h"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "scene_manager.h"
-#include "resource_manager.h"
-#include "scene_names.h"
+#include "engine/scene_manager.h"
+#include "engine/resource_manager.h"
+#include "scenes/scene_names.h"
 
 
 Game::Game() : rm(), sm(rm) {}

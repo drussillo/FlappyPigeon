@@ -2,8 +2,8 @@
 #define PIGEON_H
 
 
-#include "element.h"
-#include "resource_manager.h"
+#include "elements/element.h"
+#include "engine/resource_manager.h"
 
 class Pigeon : public Element {
 public:

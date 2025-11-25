@@ -1,7 +1,7 @@
-#include "mesh.h"
+#include "graphics/mesh.h"
 
 #include <iostream>
-#include <vector>
+
 
 Mesh::Mesh(
            const std::vector<float> &vertices, 

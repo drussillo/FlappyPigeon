@@ -1,9 +1,9 @@
 #ifndef MAIN_MENU_SCENE_H
 #define MAIN_MENU_SCENE_H
 
-#include "scene.h"
+#include "scenes/scene.h"
 
-#include "resource_manager.h"
+#include "engine/resource_manager.h"
 
 
 class MainMenuScene : public Scene {

@@ -1,13 +1,13 @@
-#include "element.h"
+#include "elements/element.h"
 
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-#include "mesh.h"
-#include "shader.h"
-#include "texture.h"
+#include "graphics/mesh.h"
+#include "graphics/shader.h"
+#include "graphics/texture.h"
 
 
 Element::Element(const std::shared_ptr<Mesh> mesh,

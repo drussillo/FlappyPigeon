@@ -1,9 +1,10 @@
-#include "texture.h"
+#include "graphics/texture.h"
+
+#include <iostream>
 
 #include <glad/glad.h>
 #include <stb/stb_image.h>
-#include <iostream>
-#include <string>
+
 
 Texture::Texture(const std::string &path, int width, int height, int nrChannels) : 
   path{path}, width{width}, height{height}, nrChannels{nrChannels} {}

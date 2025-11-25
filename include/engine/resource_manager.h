@@ -9,9 +9,9 @@
 #include <memory>
 #include <vector>
 
-#include "mesh.h"
-#include "shader.h"
-#include "texture.h"
+#include "graphics/mesh.h"
+#include "graphics/shader.h"
+#include "graphics/texture.h"
 
 
 class ResourceManager {

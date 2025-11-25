@@ -10,24 +10,29 @@ find_package(glfw3 3.3 REQUIRED)
 
 # Add source files
 add_executable(FlappyPigeon 
-  src/glad.c
-  src/stb/stb_image.cpp
   src/main.cpp
-  src/game.cpp
-  src/resource_manager.cpp
-  src/scene_manager.cpp
-  src/scene.cpp
-  src/element.cpp
-  src/pigeon.cpp
-  src/mesh.cpp
-  src/shader.cpp
-  src/input.cpp
-  src/main_menu_scene.cpp
-  src/texture.cpp
+
+  src/engine/game.cpp
+  src/engine/input.cpp
+  src/engine/resource_manager.cpp
+  src/engine/scene_manager.cpp
+
+  src/graphics/mesh.cpp
+  src/graphics/shader.cpp
+  src/graphics/texture.cpp
+
+  src/elements/element.cpp
+  src/elements/pigeon.cpp
+
+  src/scenes/scene.cpp
+  src/scenes/main_menu_scene.cpp
+
+  lib/glad/glad.c
+  lib/stb/stb_image.cpp
 )
 
 # include
-target_include_directories(FlappyPigeon PRIVATE include)
+target_include_directories(FlappyPigeon PRIVATE include lib)
 
 # Link libraries
 target_link_libraries(FlappyPigeon PRIVATE OpenGL::GL glfw)

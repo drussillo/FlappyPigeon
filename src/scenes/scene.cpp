@@ -1,12 +1,12 @@
-#include "scene.h"
+#include "scenes/scene.h"
 
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 #include <vector>
 #include <memory>
 
-#include "resource_manager.h"
-#include "element.h"
+#include "engine/resource_manager.h"
+#include "elements/element.h"
 
 
 Scene::Scene(ResourceManager &rm) : rm{rm} {}

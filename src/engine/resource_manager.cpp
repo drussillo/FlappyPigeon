@@ -1,9 +1,9 @@
-#include "resource_manager.h"
+#include "engine/resource_manager.h"
 
 #include <iostream>
 
-#include "mesh.h"
-#include "shader.h"
+#include "graphics/mesh.h"
+#include "graphics/shader.h"
 
 
 void ResourceManager::loadMesh(const std::string &meshName,

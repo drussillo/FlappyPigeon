@@ -1,10 +1,10 @@
-#include "pigeon.h"
+#include "elements/pigeon.h"
 
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-#include "element.h"
-#include "resource_manager.h"
+#include "elements/element.h"
+#include "engine/resource_manager.h"
 
 Pigeon::Pigeon(ResourceManager &rm)
                : Element(rm.getMesh("quad"), rm.getShader("defaultShader"), rm.getTexture("Pigeon")) {
