@@ -33,7 +33,7 @@ void Wall::draw() {
 
 void Wall::update(float dt) {
   if(position.x < -14.0f) {
-    position.x = 175.0f;
+    position.x = 188.0f;
     randomize();
   }
 
