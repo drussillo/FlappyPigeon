@@ -18,6 +18,12 @@ void ModeInfiniteScene::init() {
 
   elements = {
     std::make_shared<Cloud>(rm),
+    std::make_shared<Cloud>(rm),
+    std::make_shared<Cloud>(rm),
+    std::make_shared<Cloud>(rm),
+    std::make_shared<Cloud>(rm),
+    std::make_shared<Cloud>(rm),
+    std::make_shared<Cloud>(rm),
     std::make_shared<Pigeon>(rm)
   };
 }

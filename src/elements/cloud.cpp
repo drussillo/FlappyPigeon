@@ -3,19 +3,21 @@
 #include <glm/glm.hpp>
 
 #include "engine/resource_manager.h"
+#include "engine/random.h"
 
 
 Cloud::Cloud(ResourceManager &rm) 
              : Element(rm.getMesh("quad"), rm.getShader("defaultShader"), rm.getTexture("cloud_1")) {
-  setPosition(glm::vec2(160.0f, 0.0f));
-  // TODO random y coord
-  setScale(glm::vec2(35.0f, 14.0f));
+  setPosition(glm::vec2(static_cast<float>(Random::range(0, 250)), static_cast<float>(Random::range(10, 75))));
+  velocity.x = static_cast<float>(Random::range(3, 15)) / -100;  // 0.02 - 0.15
+  setScale(glm::vec2(23.0f * -velocity.x * 10, 6.0f * -velocity.x * 10));
 }
 
 void Cloud::update(float dt) {
-  velocity.x = -0.1f;
   if(position.x < -scale.x) {
-    position.x = 160.0f;
+    position = glm::vec2(static_cast<float>(Random::range(160, 200)), static_cast<float>(Random::range(10, 75)));
+    velocity.x = static_cast<float>(Random::range(3, 15)) / -100;  // 0.02 - 0.15
+    setScale(glm::vec2(23.0f * -velocity.x * 10, 6.0f * -velocity.x * 10));
   }
 
 

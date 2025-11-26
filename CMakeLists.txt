@@ -14,6 +14,7 @@ add_executable(FlappyPigeon
 
   src/engine/game.cpp
   src/engine/input.cpp
+  src/engine/random.cpp
   src/engine/resource_manager.cpp
   src/engine/scene_manager.cpp
 
