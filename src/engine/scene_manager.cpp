@@ -6,7 +6,7 @@
 #include "engine/resource_manager.h"
 
 #include "scenes/scene.h"
-#include "scenes/main_menu_scene.h"
+#include "scenes/mode_infinite_scene.h"
 // Add new scenes here
 
 SceneManager::SceneManager(ResourceManager &rm) : rm{rm} {}
@@ -20,7 +20,10 @@ void SceneManager::changeScene(SceneNames sceneName) {
     case SceneNames::NONE:
       break;
     case SceneNames::MAIN_MENU:
-      currentScene = std::make_unique<MainMenuScene>(rm);
+      // currentScene = std::make_unique<MainMenuScene>(rm);
+      break;
+    case SceneNames::MODE_INFINITE:
+      currentScene = std::make_unique<ModeInfiniteScene>(rm);
       break;
 
     // Add more scenes here

@@ -23,9 +23,10 @@ add_executable(FlappyPigeon
 
   src/elements/element.cpp
   src/elements/pigeon.cpp
+  src/elements/cloud.cpp
 
   src/scenes/scene.cpp
-  src/scenes/main_menu_scene.cpp
+  src/scenes/mode_infinite_scene.cpp
 
   lib/glad/glad.c
   lib/stb/stb_image.cpp

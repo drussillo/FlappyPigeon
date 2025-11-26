@@ -6,9 +6,9 @@
 #include "engine/resource_manager.h"
 
 
-class MainMenuScene : public Scene {
+class ModeInfiniteScene : public Scene {
 public:
-  MainMenuScene(ResourceManager &rm);
+  ModeInfiniteScene(ResourceManager &rm);
 
   void init() override;
   void exit() override;

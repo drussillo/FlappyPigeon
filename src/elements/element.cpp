@@ -45,13 +45,13 @@ void Element::applyModel() {
   model = glm::translate(model, glm::vec3(position.x, position.y, 0.0f));
   model = glm::rotate(model, glm::radians(rotation), glm::vec3(0, 0, 1));
   model = glm::scale(model, glm::vec3(scale.x, scale.y, 1));
-  shader->setMat4Uniform("uTransform", model);
 }
 
 void Element::draw() const {
   shader->use();
   mesh->bindVAO();
   texture->bindUnit(shader->getProgram());
+  shader->setMat4Uniform("uTransform", model);
   if(mesh->hasEBO()) {
     glDrawElements(
       mesh->getType(),
