@@ -26,7 +26,6 @@ void Texture::load() {
 
   data = stbi_load(path.c_str(), &width, &height, &nrChannels, 0);
   if(data) {
-    printf("%s\n", data);
     if(nrChannels == 4) {
       glEnable(GL_BLEND);
       glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

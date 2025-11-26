@@ -36,5 +36,5 @@ void Pigeon::update(float dt) {
   // scale.x += velocity.y;
   // scale.y += velocity.y;
 
-  position += velocity; // * deltaTime
+  position += velocity * dt;
 }

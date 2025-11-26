@@ -34,7 +34,6 @@ private:
   std::string fragmentShaderSource;
 };
 
-// TODO: add projection uniform UBO (uniform buffer object) ?
 namespace ShaderUtils {
 
 void genProjectionBuffer();

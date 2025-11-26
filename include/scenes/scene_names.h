@@ -5,7 +5,8 @@
 enum class SceneNames {
   NONE,
   MAIN_MENU,
-  MODE_INFINITE
+  FAIL,
+  MODE_INFINITE,
   // Add more scene types here
 };
 

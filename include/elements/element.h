@@ -14,7 +14,6 @@ public:
   Element(const std::shared_ptr<Mesh> mesh,
           const std::shared_ptr<Shader> shader,
           const std::shared_ptr<Texture> textue);
-  // TODO add position, rotation, scale, and maybe velocity to constructor params
 
   void setPosition(glm::vec2 newPosition);
   void setVelocity(glm::vec2 newVelocity);
@@ -23,8 +22,9 @@ public:
   void setScale(glm::vec2 newScale);
 
   void applyModel();
-  void draw() const;
+  virtual void draw();
   virtual void update(float dt);
+  virtual bool collidesWith(std::shared_ptr<Element> element);
 
 protected:
   std::shared_ptr<Mesh> mesh;

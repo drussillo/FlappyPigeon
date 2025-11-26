@@ -10,6 +10,9 @@ public:
   Cloud(ResourceManager &rm);
 
   void update(float dt) override;
+
+private:
+  void randomize();
 };
 
 

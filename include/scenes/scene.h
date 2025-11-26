@@ -23,7 +23,7 @@ public:
   void setBackgroundColor(const glm::vec4 &newBackgroundColor);
   void addElement(std::shared_ptr<Element> newElement);
 
-  void update(float dt);
+  virtual void update(float dt);
   void render() const;
 
 protected:

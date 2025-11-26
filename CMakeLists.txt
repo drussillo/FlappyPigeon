@@ -25,6 +25,7 @@ add_executable(FlappyPigeon
   src/elements/element.cpp
   src/elements/pigeon.cpp
   src/elements/cloud.cpp
+  src/elements/wall.cpp
 
   src/scenes/scene.cpp
   src/scenes/mode_infinite_scene.cpp

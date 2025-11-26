@@ -4,6 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <memory>
 
 #include "graphics/mesh.h"
 #include "graphics/shader.h"
@@ -47,7 +48,7 @@ void Element::applyModel() {
   model = glm::scale(model, glm::vec3(scale.x, scale.y, 1));
 }
 
-void Element::draw() const {
+void Element::draw() {
   shader->use();
   mesh->bindVAO();
   texture->bindUnit(shader->getProgram());
@@ -71,4 +72,13 @@ void Element::draw() const {
 void Element::update(float dt) {
   position += velocity * dt;
 }
+
+bool Element::collidesWith(std::shared_ptr<Element> element) {
+  glm::vec2 A = this->position;
+  glm::vec2 Asize = this->scale;
+  glm::vec2 B = element->position;
+  glm::vec2 Bsize = element->scale;
+  return ((A.x + Asize.x >= B.x && A.x <= B.x + Bsize.x) && (A.y + Asize.y >= B.y && A.y <= B.y + Bsize.y));
+}
+
 

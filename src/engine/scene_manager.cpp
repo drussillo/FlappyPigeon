@@ -22,6 +22,8 @@ void SceneManager::changeScene(SceneNames sceneName) {
     case SceneNames::MAIN_MENU:
       // currentScene = std::make_unique<MainMenuScene>(rm);
       break;
+    case SceneNames::FAIL:
+      break;
     case SceneNames::MODE_INFINITE:
       currentScene = std::make_unique<ModeInfiniteScene>(rm);
       break;
