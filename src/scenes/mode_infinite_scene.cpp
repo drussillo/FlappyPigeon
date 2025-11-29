@@ -48,7 +48,7 @@ void ModeInfiniteScene::update(float dt) {
      elements[9]->collidesWith(elements[11]) ||
      elements[10]->collidesWith(elements[11])) {
     std::cout << "hello" << std::endl;
-    nextScene = SceneNames::FAIL;
+    nextScene = SceneNames::MODE_INFINITE;
     finished = true;
   }
 }
