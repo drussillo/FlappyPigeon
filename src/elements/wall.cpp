@@ -41,13 +41,16 @@ void Wall::update(float dt) {
 }
 
 bool Wall::collidesWith(std::shared_ptr<Element> element) {
-  const int tolerance = 2;
-  position.x -= 14;
-  position.y = gapY - 90.0f - gapSize / 2 - tolerance;
+  const float vertTolerance = 2;
+  const float horTolerance = 2;
+  scale.x -= horTolerance * 2;
+  position.x -= 14 - horTolerance;
+  position.y = gapY - 90.0f - gapSize / 2 - vertTolerance;
   bool bottom = Element::collidesWith(element);
-  position.y = gapY + gapSize / 2 + tolerance;
+  position.y = gapY + gapSize / 2 + vertTolerance;
   bool top = Element::collidesWith(element);
-  position.x += 14;
+  position.x += 14 - horTolerance;
+  scale.x += horTolerance * 2;
   return bottom || top;
 }
 
