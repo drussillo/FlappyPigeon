@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 23)  # use C++23
 # Find packages (assuming you have GLFW and OpenGL installed)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 3.3 REQUIRED)
+find_package(Freetype REQUIRED)
 
 # Add source files
 add_executable(FlappyPigeon 
@@ -38,7 +39,7 @@ add_executable(FlappyPigeon
 target_include_directories(FlappyPigeon PRIVATE include lib)
 
 # Link libraries
-target_link_libraries(FlappyPigeon PRIVATE OpenGL::GL glfw)
+target_link_libraries(FlappyPigeon PRIVATE OpenGL::GL glfw Freetype::Freetype)
 
 # Compiler options
 target_compile_options(FlappyPigeon PRIVATE
