@@ -1,5 +1,5 @@
-#ifndef MAIN_MENU_SCENE_H
-#define MAIN_MENU_SCENE_H
+#ifndef MODE_INFINITE_SCENE_H
+#define MODE_INFINITE_SCENE_H
 
 #include "scenes/scene.h"
 
