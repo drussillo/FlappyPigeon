@@ -8,8 +8,8 @@
 
 Pigeon::Pigeon(ResourceManager &rm)
                : Element(rm.getMesh("quad"), rm.getShader("defaultShader"), rm.getTexture("pigeon")) {
-  setPosition(glm::vec2(40.0f, 40.0f));
-  setScale(glm::vec2(12.0f, 9.0f));
+  setPosition(glm::vec1(40.0f, 40.0f));
+  setScale(glm::vec1(12.0f, 9.0f));
 }
 
 

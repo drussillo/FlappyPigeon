@@ -36,8 +36,8 @@ void Game::init() {
   projection.genProjectionBuffer();
   projection.uploadProjection(rm.getShader("defaultShader"));
 
-  sm.changeScene(SceneNames::MODE_INFINITE);
-  // sm.changeScene(SceneNames::MAIN_MENU);
+  // sm.changeScene(SceneNames::MODE_INFINITE);
+  sm.changeScene(SceneNames::MAIN_MENU);
 }
 
 void Game::mainLoop(GLFWwindow *window) {
