@@ -46,8 +46,9 @@ void ModeInfiniteScene::update(float dt) {
   if(elements[7]->collidesWith(elements[11]) || 
      elements[8]->collidesWith(elements[11]) ||
      elements[9]->collidesWith(elements[11]) ||
-     elements[10]->collidesWith(elements[11])) {
-    std::cout << "hello" << std::endl;
+     elements[10]->collidesWith(elements[11]) ||
+     elements[11]->getPosition().y > 100 ||
+     elements[11]->getPosition().y < -20) {
     nextScene = SceneNames::MODE_INFINITE;
     finished = true;
   }

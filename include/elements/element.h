@@ -20,6 +20,7 @@ public:
   void addVelocity(glm::vec2 newVelocity);
   void setRotation(float newRotation);
   void setScale(glm::vec2 newScale);
+  glm::vec2 getPosition() const;
 
   void applyModel();
   virtual void draw();

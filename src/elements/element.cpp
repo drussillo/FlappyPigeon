@@ -39,6 +39,10 @@ void Element::setScale(glm::vec2 newScale) {
   scale = newScale;
 }
 
+glm::vec2 Element::getPosition() const {
+  return position;
+}
+
 
 // applies model and uploads to uniform
 void Element::applyModel() {
