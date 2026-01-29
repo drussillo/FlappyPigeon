@@ -14,6 +14,7 @@ Game::Game() : rm(), sm(rm) {}
 void Game::init() {
   rm.loadMesh(
     "quad",
+    // TODO: build function to overwrite UVs !vvv! for textures (normalized).
     { 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,    // bottom left
       0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,    // top left
       1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,    // top right

@@ -2,12 +2,13 @@
 #define TEXTURE_H
 
 
+#include "glm/glm.hpp"
 #include <string>
 
 
 class Texture {
 public:
-  Texture(const std::string &path, int width, int height, int nrChannels);
+  Texture(const std::string &path, int width, int height, int nrChannels, const glm::vec2 &uvCoords);
   ~Texture();
 
   void generate();
@@ -21,6 +22,7 @@ private:
   int width;
   int height;
   int nrChannels;
+  glm::vec2 uvCoords;
 };
 
 

@@ -6,8 +6,8 @@
 #include <stb/stb_image.h>
 
 
-Texture::Texture(const std::string &path, int width, int height, int nrChannels) : 
-  path{path}, width{width}, height{height}, nrChannels{nrChannels} {}
+Texture::Texture(const std::string &path, int width, int height, int nrChannels, const glm::vec2 &uvCoords) : 
+  path{path}, width{width}, height{height}, nrChannels{nrChannels}, uvCoords{uvCoords} {}
 
 Texture::~Texture() {
   stbi_image_free(data);
