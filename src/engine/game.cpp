@@ -26,8 +26,8 @@ void Game::init() {
 
   rm.loadShader(
     "defaultShader",
-    "shaders/defaultShader.vert", 
-    "shaders/defaultShader.frag"
+    res::relPath("shaders/defaultShader.vert"),
+    res::relPath("shaders/defaultShader.frag")
   );
   rm.getShader("defaultShader")->setMat4UniformLocation("uTransform");
 

@@ -11,8 +11,8 @@ find_package(Freetype REQUIRED)
 
 
 ############# !!!!!
-# TODO: Fix relative paths loading
-# Standalone executable
+# Standalone executable----------------------------
+
 # set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
 # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -static-libgcc -static-libstdc++")
 # set(BUILD_SHARED_LIBS OFF)
@@ -25,7 +25,8 @@ find_package(Freetype REQUIRED)
 #     # Linux: don't force static linking
 #     set(CMAKE_EXE_LINKER_FLAGS "")
 # endif()
-# end
+
+# end---------------------------------------------
 ############ !!!!!
 
 # Add source files

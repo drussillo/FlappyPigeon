@@ -68,4 +68,11 @@ private:
 };
 
 
+namespace res {
+
+std::string relPath(const std::string &path);
+
+}
+
+
 #endif

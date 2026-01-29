@@ -1,6 +1,7 @@
 #include "engine/resource_manager.h"
 
 #include <iostream>
+#include "filesystem"
 
 #include "graphics/mesh.h"
 #include "graphics/shader.h"
@@ -19,6 +20,7 @@ void ResourceManager::loadMesh(const std::string &meshName,
     std::cerr << "Error: attempted to load mesh resource twice. Mesh name: '" << meshName << "'" << std::endl;
   }
 }
+
 
 std::shared_ptr<Mesh> ResourceManager::getMesh(const std::string &meshName) {
   if(hasMesh(meshName)) {
@@ -135,5 +137,10 @@ bool ResourceManager::hasShader(const std::string &shaderName) {
 
 bool ResourceManager::hasTexture(const std::string &textureName) {
   return loadedTextures.find(textureName) != loadedTextures.end();
+}
+
+
+std::string res::relPath(const std::string &path) {
+  return (std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / path).string();
 }
 
