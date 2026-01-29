@@ -13,6 +13,9 @@ public:
   void init() override;
   void update(float dt) override;
   void exit() override;
+
+private:
+  unsigned int points = 0;
 };
 
 

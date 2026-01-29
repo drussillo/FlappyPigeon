@@ -42,7 +42,6 @@ void ModeInfiniteScene::init() {
 void ModeInfiniteScene::update(float dt) {
   Scene::update(dt);
 
-  // TODO
   if(elements[7]->collidesWith(elements[11]) || 
      elements[8]->collidesWith(elements[11]) ||
      elements[9]->collidesWith(elements[11]) ||
@@ -51,6 +50,15 @@ void ModeInfiniteScene::update(float dt) {
      elements[11]->getPosition().y < -20) {
     nextScene = SceneNames::MODE_INFINITE;
     finished = true;
+  }
+
+  for(int i = 7; i < 11; i++) {
+    if(elements[i]->getPosition().x < elements[11]->getPosition().x && !elements[i]->getPassed()) {
+      elements[i]->setPassed(true);
+      points++;
+      // TODO: Add textelement and update.
+      std::cout << points << std::endl;
+    }
   }
 }
 

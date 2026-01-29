@@ -18,6 +18,15 @@ Wall::Wall(ResourceManager &rm, int wallNumber)
 }
 
 
+void Wall::setPassed(bool value) {
+  passed = value;
+}
+
+bool Wall::getPassed() const {
+  return passed;
+}
+
+
 void Wall::draw() {
   setRotation(0.0f);
   position.x -= 14.0f;
@@ -33,6 +42,7 @@ void Wall::draw() {
 
 void Wall::update(float dt) {
   if(position.x < -14.0f) {
+    setPassed(false);
     position.x = 188.0f;
     randomize();
   }

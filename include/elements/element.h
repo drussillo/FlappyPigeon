@@ -14,6 +14,7 @@ public:
   Element(const std::shared_ptr<Mesh> mesh,
           const std::shared_ptr<Shader> shader,
           const std::shared_ptr<Texture> textue);
+  virtual ~Element() = default;
 
   void setPosition(glm::vec2 newPosition);
   void setVelocity(glm::vec2 newVelocity);
@@ -21,6 +22,9 @@ public:
   void setRotation(float newRotation);
   void setScale(glm::vec2 newScale);
   glm::vec2 getPosition() const;
+
+  virtual void setPassed(bool value) { (void)value; };
+  virtual bool getPassed() const { return false; };
 
   void applyModel();
   virtual void draw();
