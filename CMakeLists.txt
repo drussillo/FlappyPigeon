@@ -9,6 +9,25 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 3.3 REQUIRED)
 find_package(Freetype REQUIRED)
 
+
+############# !!!!!
+# TODO: Fix relative paths loading
+# Standalone executable
+# set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -static-libgcc -static-libstdc++")
+# set(BUILD_SHARED_LIBS OFF)
+#
+# # For MSVC (Windows Visual Studio compiler), link against the static runtime library
+# if(MSVC)
+#     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded")
+#     target_compile_options(FlappyPigeon PRIVATE /MT)
+# else()
+#     # Linux: don't force static linking
+#     set(CMAKE_EXE_LINKER_FLAGS "")
+# endif()
+# end
+############ !!!!!
+
 # Add source files
 add_executable(FlappyPigeon 
   src/main.cpp
@@ -30,7 +49,6 @@ add_executable(FlappyPigeon
 
   src/scenes/scene.cpp
   src/scenes/mode_infinite_scene.cpp
-  src/scenes/main_menu_scene.cpp
 
   lib/glad/glad.c
   lib/stb/stb_image.cpp
