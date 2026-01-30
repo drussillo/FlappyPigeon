@@ -8,3 +8,13 @@ cmake -S . -B build
 cmake --build build/  
 ```
 Executable will be in FlappyPigeon/build/  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  
+
+![Alt text](screenshots/preview1.png)
