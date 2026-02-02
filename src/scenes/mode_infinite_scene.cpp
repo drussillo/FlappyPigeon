@@ -37,6 +37,13 @@ void ModeInfiniteScene::init() {
     std::make_shared<Wall>(rm, 4),
     std::make_shared<Pigeon>(rm)
   };
+
+  elements[11]->getMesh()->updateUV(
+    glm::vec4(0.0f, 1.0f, 6.0f, 7.0f),
+    glm::vec4(0.0f, 0.0f, 14.0f, 15.0f),
+    glm::vec4(1.0f, 0.0f, 22.0f, 23.0f),
+    glm::vec4(1.0f, 1.0f, 30.0f, 31.0f)
+  );
 }
 
 void ModeInfiniteScene::update(float dt) {

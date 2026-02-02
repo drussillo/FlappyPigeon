@@ -22,6 +22,7 @@ public:
   void setRotation(float newRotation);
   void setScale(glm::vec2 newScale);
   glm::vec2 getPosition() const;
+  std::shared_ptr<Mesh> getMesh() const;
 
   virtual void setPassed(bool value) { (void)value; };
   virtual bool getPassed() const { return false; };

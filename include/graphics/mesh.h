@@ -4,6 +4,7 @@
 
 #include <glad/glad.h>
 #include <vector>
+#include <glm/glm.hpp>
 
 
 class Mesh {
@@ -13,6 +14,12 @@ public:
        const std::vector<unsigned int> &indices={},
        const GLenum primitiveType=GL_TRIANGLES);
   ~Mesh();
+
+  // each vector is <u, v, u_index, v_index>
+  void updateUV(const glm::vec4 &topLeft,
+                const glm::vec4 &topRight,
+                const glm::vec4 &bottomLeft,
+                const glm::vec4 &bottomRight);
 
   GLenum getType() const;
   unsigned int getVertexCount() const;

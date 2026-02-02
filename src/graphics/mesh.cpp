@@ -35,6 +35,22 @@ Mesh::~Mesh() {
 }
 
 
+void Mesh::updateUV(const glm::vec4 &topLeft,
+                    const glm::vec4 &topRight,
+                    const glm::vec4 &bottomLeft,
+                    const glm::vec4 &bottomRight) {
+  vertices[topLeft.z] = topLeft.x;
+  vertices[topLeft.w] = topLeft.y;
+  vertices[topRight.z] = topRight.x;
+  vertices[topRight.w] = topRight.y;
+  vertices[bottomLeft.z] = bottomLeft.x;
+  vertices[bottomLeft.w] = bottomLeft.y;
+  vertices[bottomRight.z] = bottomRight.x;
+  vertices[bottomRight.w] = bottomRight.y;
+  upload();
+}
+
+
 GLenum Mesh::getType() const {
   return primitiveType;
 }

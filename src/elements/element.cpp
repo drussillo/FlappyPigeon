@@ -3,7 +3,6 @@
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <GLFW/glfw3.h>
-#include <iostream>
 #include <memory>
 
 #include "graphics/mesh.h"
@@ -41,6 +40,10 @@ void Element::setScale(glm::vec2 newScale) {
 
 glm::vec2 Element::getPosition() const {
   return position;
+}
+
+std::shared_ptr<Mesh> Element::getMesh() const {
+  return mesh;
 }
 
 
