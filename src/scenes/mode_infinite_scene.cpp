@@ -21,6 +21,7 @@ void ModeInfiniteScene::init() {
   rm.loadTexture("pigeon", res::relPath("sprites/pigeon_sprite.png"), 12, 9, 4);
   rm.loadTexture("brick_wall", res::relPath("sprites/brick_wall.png"), 14, 90, 4);
   rm.loadTexture("cloud_1", res::relPath("sprites/cloud_1.png"), 41, 16, 4);
+  // TODO copy quad mesh into new wall mesh (for uv coords)
 
 
   elements = {

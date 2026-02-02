@@ -21,6 +21,15 @@ void ResourceManager::loadMesh(const std::string &meshName,
   }
 }
 
+void ResourceManager::copyMesh(const std::string &oldMesh, const std::string &newMesh) {
+  if(!hasMesh(newMesh) && hasMesh(oldMesh)) {
+    loadedMeshes[newMesh] = loadedMeshes[oldMesh];
+    loadedMeshes[newMesh]->genBuffers();
+    loadedMeshes[newMesh]->upload();
+  } else {
+    std::cerr << "Error: mesh copy error. " << oldMesh << " > " << newMesh << std::endl;
+  }
+}
 
 std::shared_ptr<Mesh> ResourceManager::getMesh(const std::string &meshName) {
   if(hasMesh(meshName)) {

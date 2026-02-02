@@ -24,6 +24,7 @@ public:
                 const std::vector<unsigned int> &attributeSizes,
                 const std::vector<unsigned int> &indices={},
                 const GLenum primitiveType=GL_TRIANGLES);
+  void copyMesh(const std::string &oldMesh, const std::string &newMesh);
   std::shared_ptr<Mesh> getMesh(const std::string &meshName);
   std::shared_ptr<Mesh> loadAndGetMesh(const std::string &meshName,
                                        const std::vector<float> &vertices,
