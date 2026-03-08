@@ -8,20 +8,25 @@
 Wall::Wall(ResourceManager &rm, int wallNumber)
            : Element(rm.getMesh("wall"), rm.getShader("defaultShader"), rm.getTexture("brick_wall")) {
 
+  float wallTextureAmount = 2;
+  float currentTexture = 0;
+  // currentTexture < wallTextureAmount
+
   // wall 1
   rm.getMesh("wall")->updateUV(
-    glm::vec4(0.0f, 1.0f, 6.0f, 7.0f),
-    glm::vec4(0.0f, 0.0f, 14.0f, 15.0f),
-    glm::vec4(0.5f, 0.0f, 22.0f, 23.0f),
-    glm::vec4(0.5f, 1.0f, 30.0f, 31.0f)
+    glm::vec4(currentTexture / wallTextureAmount, 1.0f, 6.0f, 7.0f),
+    glm::vec4(currentTexture / wallTextureAmount, 0.0f, 14.0f, 15.0f),
+    glm::vec4((currentTexture+1) / wallTextureAmount, 0.0f, 22.0f, 23.0f),
+    glm::vec4((currentTexture+1) / wallTextureAmount, 1.0f, 30.0f, 31.0f)
   );
+  currentTexture++;
 
   // wall 2
   rm.getMesh("wall")->updateUV(
-    glm::vec4(0.5f, 1.0f, 6.0f, 7.0f),
-    glm::vec4(0.5f, 0.0f, 14.0f, 15.0f),
-    glm::vec4(1.0f, 0.0f, 22.0f, 23.0f),
-    glm::vec4(1.0f, 1.0f, 30.0f, 31.0f)
+    glm::vec4(currentTexture / wallTextureAmount, 1.0f, 6.0f, 7.0f),
+    glm::vec4(currentTexture / wallTextureAmount, 0.0f, 14.0f, 15.0f),
+    glm::vec4((currentTexture+1) / wallTextureAmount, 0.0f, 22.0f, 23.0f),
+    glm::vec4((currentTexture+1) / wallTextureAmount, 1.0f, 30.0f, 31.0f)
   );
 
   randomize();
