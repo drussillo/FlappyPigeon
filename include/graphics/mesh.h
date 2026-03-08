@@ -13,6 +13,7 @@ public:
        const std::vector<unsigned int> &attributeSizes,
        const std::vector<unsigned int> &indices={},
        const GLenum primitiveType=GL_TRIANGLES);
+  Mesh(Mesh &oldMesh);
   ~Mesh();
 
   // each vector is <u, v, u_index, v_index>

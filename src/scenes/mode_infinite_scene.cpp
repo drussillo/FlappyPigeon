@@ -18,7 +18,7 @@ ModeInfiniteScene::ModeInfiniteScene(ResourceManager &rm) : Scene(rm) {};
 void ModeInfiniteScene::init() {
   backgroundColor = glm::vec4(0.6, 0.8, 1.0, 1.0);
 
-  // rm.copyMesh("quad", "wall");
+  rm.copyMesh("quad", "wall");
 
   rm.loadTexture("pigeon", res::relPath("sprites/pigeon_sprite.png"), 12, 9, 4);
   rm.loadTexture("brick_wall", res::relPath("sprites/brick_wall.png"), 14, 90, 4);

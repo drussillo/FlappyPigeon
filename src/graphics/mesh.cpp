@@ -27,6 +27,12 @@ Mesh::Mesh(
   vertexCount = vertices.size() / vertexAttributes;
 }
 
+Mesh::Mesh(Mesh &oldMesh):
+  vertices{oldMesh.vertices}, 
+  attributeSizes{oldMesh.attributeSizes},
+  indices{oldMesh.indices},
+  primitiveType{oldMesh.primitiveType} {}
+
 Mesh::~Mesh() {
   unbindVAO();
   glDeleteBuffers(1, &VAO);
