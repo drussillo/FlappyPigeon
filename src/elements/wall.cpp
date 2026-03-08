@@ -6,8 +6,23 @@
 
 
 Wall::Wall(ResourceManager &rm, int wallNumber)
-           : Element(rm.getMesh("quad"), rm.getShader("defaultShader"), rm.getTexture("brick_wall")) {
+           : Element(rm.getMesh("wall"), rm.getShader("defaultShader"), rm.getTexture("brick_wall")) {
 
+  // wall 1
+  rm.getMesh("wall")->updateUV(
+    glm::vec4(0.0f, 1.0f, 6.0f, 7.0f),
+    glm::vec4(0.0f, 0.0f, 14.0f, 15.0f),
+    glm::vec4(0.5f, 0.0f, 22.0f, 23.0f),
+    glm::vec4(0.5f, 1.0f, 30.0f, 31.0f)
+  );
+
+  // wall 2
+  rm.getMesh("wall")->updateUV(
+    glm::vec4(0.5f, 1.0f, 6.0f, 7.0f),
+    glm::vec4(0.5f, 0.0f, 14.0f, 15.0f),
+    glm::vec4(1.0f, 0.0f, 22.0f, 23.0f),
+    glm::vec4(1.0f, 1.0f, 30.0f, 31.0f)
+  );
 
   randomize();
   setScale(glm::vec2(14.0f, 90.0f));

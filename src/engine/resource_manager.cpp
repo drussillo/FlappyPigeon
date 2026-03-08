@@ -23,6 +23,7 @@ void ResourceManager::loadMesh(const std::string &meshName,
 
 void ResourceManager::copyMesh(const std::string &oldMesh, const std::string &newMesh) {
   if(!hasMesh(newMesh) && hasMesh(oldMesh)) {
+    // TODO: copy value instead of passing pointer
     loadedMeshes[newMesh] = loadedMeshes[oldMesh];
     loadedMeshes[newMesh]->genBuffers();
     loadedMeshes[newMesh]->upload();

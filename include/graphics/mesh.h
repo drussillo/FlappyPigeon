@@ -16,9 +16,9 @@ public:
   ~Mesh();
 
   // each vector is <u, v, u_index, v_index>
-  void updateUV(const glm::vec4 &topLeft,
+  void updateUV(const glm::vec4 &bottomLeft,
+                const glm::vec4 &topLeft,
                 const glm::vec4 &topRight,
-                const glm::vec4 &bottomLeft,
                 const glm::vec4 &bottomRight);
 
   GLenum getType() const;

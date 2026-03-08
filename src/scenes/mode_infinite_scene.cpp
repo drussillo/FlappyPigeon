@@ -18,10 +18,11 @@ ModeInfiniteScene::ModeInfiniteScene(ResourceManager &rm) : Scene(rm) {};
 void ModeInfiniteScene::init() {
   backgroundColor = glm::vec4(0.6, 0.8, 1.0, 1.0);
 
+  // rm.copyMesh("quad", "wall");
+
   rm.loadTexture("pigeon", res::relPath("sprites/pigeon_sprite.png"), 12, 9, 4);
   rm.loadTexture("brick_wall", res::relPath("sprites/brick_wall.png"), 14, 90, 4);
   rm.loadTexture("cloud_1", res::relPath("sprites/cloud_1.png"), 41, 16, 4);
-  // TODO copy quad mesh into new wall mesh (for uv coords)
 
 
   elements = {
@@ -39,12 +40,6 @@ void ModeInfiniteScene::init() {
     std::make_shared<Pigeon>(rm)
   };
 
-  elements[11]->getMesh()->updateUV(
-    glm::vec4(0.0f, 1.0f, 6.0f, 7.0f),
-    glm::vec4(0.0f, 0.0f, 14.0f, 15.0f),
-    glm::vec4(1.0f, 0.0f, 22.0f, 23.0f),
-    glm::vec4(1.0f, 1.0f, 30.0f, 31.0f)
-  );
 }
 
 void ModeInfiniteScene::update(float dt) {
